@@ -1,0 +1,44 @@
+[
+  {
+    "slug": "digital-transformation",
+    "title": "Digital Transformation Advisory",
+    "shortDescription": "Modernize your business tech stack and optimize legacy enterprise architectures for global markets.",
+    "longDescription": "We guide global organizations through complex technical transitions to scalable, modern cloud systems.",
+    "features": ["Cloud Migration Strategies", "Legacy App Modernization"]
+  },
+  {
+    "slug": "product-strategy",
+    "title": "Product Strategy & Engineering",
+    "shortDescription": "Crafting highly scalable, full-stack application architectures with high-conversion interfaces.",
+    "longDescription": "From initial proof-of-concept to production-grade deployment, we design software engineering systems.",
+    "features": ["UI/UX Systems Design", "Full-Stack System Engineering"]
+  },
+  {
+    "slug": "it-consultancy",
+    "title": "Enterprise IT Advisory",
+    "shortDescription": "Bulletproof data security structures and system optimization built for international scaling.",
+    "longDescription": "Protect your company assets while maximizing response speeds and global infrastructure efficiency.",
+    "features": ["Security Architecture Audits", "Performance Optimization"]
+  },
+  {
+    "slug": "cloud-architecture",
+    "title": "Cloud Infrastructure & DevOps",
+    "shortDescription": "Automated pipeline management and multi-cloud configurations for continuous application health.",
+    "longDescription": "Minimize runtime downtime using containerized orchestration platforms engineered for modern traffic.",
+    "features": ["CI/CD Deployment Pipelines", "Kubernetes Clustering"]
+  },
+  {
+    "slug": "ai-integration",
+    "title": "AI & Automation Architecture",
+    "shortDescription": "Supercharge operations by embedding smart data layers and custom business workflows.",
+    "longDescription": "Implement highly targeted automation pathways that reduce overhead costs and simplify management.",
+    "features": ["Large Language Model Tuning", "Workflow Automation Development"]
+  },
+  {
+    "slug": "data-analytics",
+    "title": "Big Data Engineering Systems",
+    "shortDescription": "Transform complex structural logs into operational visual engines to guide critical decisions.",
+    "longDescription": "Build custom enterprise ingestion layers designed to securely isolate and route intelligence streams.",
+    "features": ["Data Pipeline Engineering", "Predictive Trend Analysis"]
+  }
+]

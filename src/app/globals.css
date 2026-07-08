@@ -1,26 +1,209 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-brand-green: #10b981;
+  --color-brand-teal: #0891b2;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+:root {
+  --background: #f8fafc; /* Bright, clean premium slate-white background */
+  --foreground: #0f172a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #f8fafc; /* Forcing the bright theme layout uniformly */
+    --foreground: #0f172a;
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
   color: var(--foreground);
+  background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth Infinite Loop Animation for the Clients Slider */
+@keyframes infiniteScroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-infinite-scroll {
+  display: flex;
+  width: max-content;
+  animation: infiniteScroll 25s linear infinite;
+}
+
+
+/* Custom Interactive Matrix for the Premium Get In Touch Trigger */
+.premium-cta-btn {
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  color: #ffffff;
+  background: #10b981; /* Default brand-green */
+  box-shadow: 0 0 4px 0 #10b981;
+  transition: all 1s ease;
+}
+
+.premium-cta-btn:active {
+  transform: scale(0.95);
+}
+
+.premium-cta-btn:hover {
+  outline: 2px solid transparent;
+  outline-offset: 4px;
+  box-shadow: 0 0 16px 0 #0891b2; /* Shifts to glowing brand-teal on hover */
+  animation: 
+    ctaRipple 1s linear infinite, 
+    ctaColorize 1s infinite;
+  transition: all 0.4s ease;
+}
+
+.premium-cta-btn svg {
+  height: 0.85em;
+  fill: #ffffff;
+  margin-left: 6px;
+  margin-right: -2px;
+  position: relative;
+  transition: all 0.4s ease;
+}
+
+.premium-cta-btn:hover svg {
+  margin-right: 8px;
+  margin-left: 12px;
+  filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+/* Sequencing the triple arrow breakout translations */
+.premium-cta-btn svg polygon:nth-child(1) {
+  transition: all 0.3s ease;
+  transform: translateX(-55%);
+}
+
+.premium-cta-btn svg polygon:nth-child(2) {
+  transition: all 0.4s ease;
+  transform: translateX(-25%);
+}
+
+.premium-cta-btn:hover svg polygon:nth-child(1) {
+  transform: translateX(0%);
+  animation: ctaArrowOpacity 1s infinite 0.6s;
+}
+
+.premium-cta-btn:hover svg polygon:nth-child(2) {
+  transform: translateX(0%);
+  animation: ctaArrowOpacity 1s infinite 0.4s;
+}
+
+.premium-cta-btn:hover svg polygon:nth-child(3) {
+  animation: ctaArrowOpacity 1s infinite 0.2s;
+}
+
+/* Animation Keyframes translated for your Brand Colors */
+@keyframes ctaArrowOpacity {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.2; }
+}
+
+@keyframes ctaColorize {
+  0%, 100% { background: #10b981; } /* brand-green */
+  50% { background: #0891b2; }    /* blends beautifully to brand-teal */
+}
+
+@keyframes ctaRipple {
+  0% {
+    outline: 0px solid transparent;
+    outline-offset: -2px;
+  }
+  50% {
+    outline: 2px solid rgba(16, 185, 129, 0.4);
+    outline-offset: 4px;
+  }
+  100% {
+    outline: 4px solid transparent;
+    outline-offset: 8px;
+  }
+}
+
+/* Premium Organic Gooey Fluid CTA Matrix - High Contrast Version */
+.gooey-cta-btn {
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  text-transform: uppercase;
+  /* UPGRADED: Set border and text to white for perfect visibility against dark hero images */
+  border: 3px solid hwb(100 1% 4%); 
+  color: #0c0101;
+  background-color: #f8fafc;
+  border-radius: 9999px;
+  transition: color 500ms ease, border-color 500ms ease;
+  overflow: visible;
+}
+
+
+.gooey-cta-btn .blob-layer {
+  height: 100%;
+  width: 100%;
+  filter: url(#gooey-fluid-filter);
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 9999px;
+}
+
+.gooey-cta-btn .blob-layer div {
+  background-color: #0891b2; /* brand-teal fluid remains beautifully intact */
+  width: 36%;
+  height: 100%;
+  border-radius: 100%;
+  position: absolute;
+  transform: scale(1.5) translateY(125%) translateZ(0);
+  transition: transform 700ms ease;
+}
+
+.gooey-cta-btn .blob-layer div:nth-child(1) { left: -5%; }
+.gooey-cta-btn .blob-layer div:nth-child(2) { left: 32%; transition-delay: 60ms; }
+.gooey-cta-btn .blob-layer div:nth-child(3) { left: 68%; transition-delay: 25ms; }
+
+.gooey-cta-btn:hover {
+  color: #ffffff;
+  /* UPGRADED: Smoothly transition border to match the expanding teal fluid */
+  border-color: #0891b2; 
+}
+
+.gooey-cta-btn:hover .blob-layer div {
+  transform: scale(1.5) translateY(0) translateZ(0);
+}
+
+
+/* Smooth gentle floating animation for side-dock items */
+@keyframes bounceSlow {
+  0%, 100% {
+    transform: translateY(-50%); /* Keeps the layout perfectly centered vertically */
+  }
+  50% {
+    transform: translateY(-58%); /* Gently moves upwards slightly */
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 3.5s ease-in-out infinite;
 }
