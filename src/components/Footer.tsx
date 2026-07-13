@@ -151,7 +151,7 @@ export default function Footer() {
               <div className="space-y-0.5">
                 <p className="text-[12px] uppercase font-bold tracking-wider text-teal-400">Phone</p>
                 <a href="tel:+8801" className="text-teal-100/80 hover:text-white transition duration-200 block">
-                  +880 1755-673826
+                  +880 1755-673862
                 </a>
               </div>
             </div>
