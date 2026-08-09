@@ -78,28 +78,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
-            <div className="w-full max-w-md aspect-square bg-gradient-to-br from-brand-teal to-brand-green p-1 rounded-3xl shadow-2xl transition-transform hover:scale-[1.01] duration-500">
-              <div className="w-full h-full bg-slate-900 rounded-[22px] flex flex-col justify-center items-center p-8 text-center text-white relative overflow-hidden">
-                <div className="absolute -right-10 -top-10 w-40 h-40 bg-brand-green/20 blur-3xl rounded-full" />
-                <div className="text-xs font-mono text-brand-green mb-4">TouchPad Consultancy</div>
-                <div className="text-2xl font-bold tracking-tight text-slate-100">TouchPad Digital Canvas</div>
-                <div className="mt-4 text-xs text-slate-400 max-w-xs leading-relaxed">Interactive Services.</div>
-                <div className="mt-8 w-full bg-slate-800/80 border border-slate-700/50 rounded-xl p-4 text-left font-mono text-[10px] text-brand-teal space-y-1">
-                  <p>&gt;  optimize --global</p>
-                  <p className="text-slate-400">&gt; 100% Operational</p>
-                  <p className="text-brand-green">&gt; Latency: </p>
-                </div>
-              </div>
-            </div>
-          </div>
+       
+       
         </div>
       </section>
 
       {/* 2. CLIENTS SLIDER */}
       <section className="py-12 bg-white border-y border-slate-200/60 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-6">
-          <p className="text-center text-xl font-semibold tracking-widest text-slate-400 uppercase">Trusted By Leading Corporate Enterprises Globally</p>
+          <p className="text-center text-xl font-semibold tracking-widest text-slate-400 uppercase"></p>
         </div>
         <div className="relative w-full flex items-center">
           <div className="animate-infinite-scroll gap-26 items-center">
