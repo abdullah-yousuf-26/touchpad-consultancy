@@ -1,44 +1,93 @@
 [
   {
-    "slug": "digital-transformation",
-    "title": "Digital Transformation Advisory",
-    "shortDescription": "Modernize your business tech stack and optimize legacy enterprise architectures for global markets.",
-    "longDescription": "We guide global organizations through complex technical transitions to scalable, modern cloud systems.",
-    "features": ["Cloud Migration Strategies", "Legacy App Modernization"]
+    "slug": "proposal-writing",
+    "title": "Proposal Writing & Grant Development",
+    "category": "Proposal Writing",
+    "shortDescription": "Delivering donor-grade technical proposals, logical frameworks, and competitive concept notes tailored to bilateral and multilateral funding opportunities.",
+    "image": "/assets/service-proposal.png",
+    "deliverables": [
+      "Grant Proposal Development",
+      "Concept Notes & Project Design",
+      "Donor Mapping & Strategy",
+      "Logical Framework Development"
+    ]
   },
   {
-    "slug": "product-strategy",
-    "title": "Product Strategy & Engineering",
-    "shortDescription": "Crafting highly scalable, full-stack application architectures with high-conversion interfaces.",
-    "longDescription": "From initial proof-of-concept to production-grade deployment, we design software engineering systems.",
-    "features": ["UI/UX Systems Design", "Full-Stack System Engineering"]
+    "slug": "research-evaluations",
+    "title": "Research, Evaluations & Assessments",
+    "category": "Research & Reviews",
+    "shortDescription": "Conducting baseline studies, endline reviews, and situation analyses utilizing qualitative and quantitative field research methodologies across Bangladesh.",
+    "image": "/assets/service-research.png",
+    "deliverables": [
+      "Baseline Studies & Endline Evaluations",
+      "Mid-term Project Reviews",
+      "Needs Assessments & Situation Analysis",
+      "Market Assessments"
+    ]
   },
   {
-    "slug": "it-consultancy",
-    "title": "Enterprise IT Advisory",
-    "shortDescription": "Bulletproof data security structures and system optimization built for international scaling.",
-    "longDescription": "Protect your company assets while maximizing response speeds and global infrastructure efficiency.",
-    "features": ["Security Architecture Audits", "Performance Optimization"]
+    "slug": "meal-systems",
+    "title": "Monitoring, Evaluation, Accountability & Learning (MEAL)",
+    "category": "MEAL Systems",
+    "shortDescription": "Designing Theory of Change frameworks, indicator tracking matrices, and continuous learning protocols for development sector interventions.",
+    "image": "/assets/service-meal.png",
+    "deliverables": [
+      "Impact Studies & Theory of Change",
+      "Results Framework & Indicator Matrix",
+      "Data Quality Assessment (DQA)",
+      "Learning Documentation"
+    ]
   },
   {
-    "slug": "cloud-architecture",
-    "title": "Cloud Infrastructure & DevOps",
-    "shortDescription": "Automated pipeline management and multi-cloud configurations for continuous application health.",
-    "longDescription": "Minimize runtime downtime using containerized orchestration platforms engineered for modern traffic.",
-    "features": ["CI/CD Deployment Pipelines", "Kubernetes Clustering"]
+    "slug": "capacity-development",
+    "title": "Capacity Development & Institutional Strengthening",
+    "category": "Capacity Building",
+    "shortDescription": "Customized training needs assessments, curriculum design, and expert workshop facilitation to strengthen organizational competencies.",
+    "image": "/assets/service-capacity.png",
+    "deliverables": [
+      "Training Needs Assessment (TNA)",
+      "Curriculum & Module Development",
+      "Workshop & Seminar Facilitation",
+      "Coaching & Mentoring"
+    ]
   },
   {
-    "slug": "ai-integration",
-    "title": "AI & Automation Architecture",
-    "shortDescription": "Supercharge operations by embedding smart data layers and custom business workflows.",
-    "longDescription": "Implement highly targeted automation pathways that reduce overhead costs and simplify management.",
-    "features": ["Large Language Model Tuning", "Workflow Automation Development"]
+    "slug": "data-services",
+    "title": "Data Services & Digital Systems",
+    "category": "Data Services",
+    "shortDescription": "Digital questionnaire design, mobile-enabled field collection (ODK/Kobo), automated interactive dashboard creation, and literature reviews.",
+    "image": "/assets/service-data.png",
+    "deliverables": [
+      "Digital Questionnaire Programming",
+      "Primary Data Collection (Kobo/ODK)",
+      "Interactive Dashboard Development",
+      "Literature Reviews & Secondary Data"
+    ]
   },
   {
-    "slug": "data-analytics",
-    "title": "Big Data Engineering Systems",
-    "shortDescription": "Transform complex structural logs into operational visual engines to guide critical decisions.",
-    "longDescription": "Build custom enterprise ingestion layers designed to securely isolate and route intelligence streams.",
-    "features": ["Data Pipeline Engineering", "Predictive Trend Analysis"]
+    "slug": "pseah-safeguarding",
+    "title": "Protection from Sexual Exploitation, Abuse & Harassment (PSEAH)",
+    "category": "PSEAH & Safeguarding",
+    "shortDescription": "Establishing organizational safeguarding frameworks, complaint feedback mechanisms, PSEAH training, and independent investigation assistance.",
+    "image": "/assets/service-pseah.png",
+    "deliverables": [
+      "PSEAH Policy Development & Audits",
+      "Safeguarding Training Facilitation",
+      "Complaint Feedback Mechanism Setup",
+      "Independent Case Investigation Assistance"
+    ]
+  },
+  {
+    "slug": "strategy-policy",
+    "title": "Strategy & Organizational Development",
+    "category": "Strategy & Policy",
+    "shortDescription": "Developing institutional policies, Standard Operating Procedures (SOPs), and strategic guidance documents for NGOs and corporate partners.",
+    "image": "/assets/service-strategy.png",
+    "deliverables": [
+      "Organizational Policy Development",
+      "Standard Operating Procedures (SOPs)",
+      "Strategic Plan & Guideline Drafting",
+      "Risk Management & Compliance Systems"
+    ]
   }
 ]

@@ -30,21 +30,16 @@ export default function Navbar() {
 </Link>
 
         {/* CENTER: Upgraded Floating Glass Capsule Menu Bar with Careers */}
-        <nav className="hidden md:flex items-center gap-5 px-6 py-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-lg text-[11px] font-bold tracking-wider uppercase text-white/90">
-          <Link href="/" className="hover:text-brand-teal transition">Home</Link>
-          <span className="w-1 h-1 rounded-full bg-white/40" />
+        <nav className="hidden md:flex items-center gap-10 px-6 py-3 rounded-full border border-white/20 bg-white/10 backdrop-blur-md shadow-lg text-[13px] font-bold tracking-wider uppercase text-teal-300">
           
-          <Link href="/services" className="hover:text-teal-300 transition">Services</Link>
-          <span className="w-1 h-1 rounded-full bg-white/40" />
+          <Link href="/" className="hover:text-white transition">Home</Link>
+          <span className="w-1 h-1 rounded-full bg-white/80" />
+
+          <Link href="/about" className="hover:text-white transition">About Us</Link>
+          <span className="w-1 h-1 rounded-full bg-white/80" />
           
-          <Link href="/about" className="hover:text-teal-300 transition">About</Link>
-          <span className="w-1 h-1 rounded-full bg-white/40" />
-          
-          {/* RESTORED: Careers Navigation Link */}
-          <Link href="/career" className="hover:text-teal-300 transition">Careers</Link>
-          <span className="w-1 h-1 rounded-full bg-white/40" />
-          
-          <Link href="/contact" className="hover:text-teal-300 transition">Contact</Link>
+          <Link href="/services" className="hover:text-white transition ">Services</Link>
+  
         </nav>
 
 {/* RIGHT SIDE: Vibrant Brand Upgraded CTA Trigger */}
