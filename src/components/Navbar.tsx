@@ -11,7 +11,7 @@ export default function Navbar() {
         {/* LEFT SIDE: Brand PNG Logo + Name */}
         <Link href="/" className="flex items-center gap-3 group">
           {/* Fully transparent container */}
-          <div className="relative w-12 h-12 flex items-center justify-center shrink-0">
+          <div className="relative w-10 h-10flex items-center justify-center shrink-0">
             <Image 
               src="/assets/TPC Logo.png" 
               alt="TouchPad Logo" 
@@ -23,7 +23,7 @@ export default function Navbar() {
           </div>
           
           <span className="text-2xl font-black tracking-tight text-white md:text-slate-900 transition-colors">
-            <span className="text-brand-green">TouchPad</span> <span className="text-brand-teal font-medium">Consultancy</span>
+            <span className="text-brand-green">TouchPad</span> <span className="text-brand-teal ">Consultancy</span>
           </span>
         </Link>
 
