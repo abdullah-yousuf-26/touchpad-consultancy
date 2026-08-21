@@ -124,7 +124,7 @@ function ScrollGridItem({
   return (
     <motion.div
       style={{ opacity, y, scale }}
-      className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-slate-900/80 border border-white/10 backdrop-blur-md shadow-lg hover:border-teal-400/40 hover:bg-slate-900/95 transition-colors duration-200"
+      className="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-2xl bg-green-500 border border-white backdrop-blur-md shadow-lg hover:border-teal-400/40 hover:bg-green-400/95 transition-colors duration-200"
     >
       <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-xl bg-gradient-to-br from-brand-teal to-emerald-500 flex items-center justify-center text-slate-950 font-bold shrink-0 shadow-md shadow-teal-500/20">
         <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -133,9 +133,7 @@ function ScrollGridItem({
       </div>
 
       <div className="flex flex-col">
-        <span className="text-[9px] sm:text-[10px] font-bold font-mono text-teal-400 uppercase tracking-wider">
-          Standard 0{index + 1}
-        </span>
+
         <span className="text-xs sm:text-sm font-semibold text-slate-100 leading-snug">
           {title}
         </span>

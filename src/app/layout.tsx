@@ -24,6 +24,7 @@ export const metadata: Metadata = {
     "PSEAH Policy Development",
     "Data Quality Assurance",
     "Technical Advisory Services",
+    "Donor Reporting & Project Documentation",
   ],
   openGraph: {
     title: "TouchPad Consultancy | Research, MEAL & Advisory Services",

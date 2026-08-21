@@ -132,43 +132,56 @@ export default function Home() {
       {/* 3. PINNED STICKY SCROLL SECTION: WHAT WE OFFER */}
       <CommitmentScroll />
 
-      {/* 4. SERVICE ADVISORY MATRIX */}
-      <section id="services" className="relative py-32 px-6 bg-slate-50 border-t border-slate-200/60">
-        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[450px] bg-brand-teal/5 blur-[130px] rounded-full pointer-events-none" />
+{/* 4. SERVICE ADVISORY MATRIX (2-COLUMN BALANCED GRID) */}
+      <section id="services" className="relative py-32 px-6 sm:px-8 lg:px-12 bg-slate-50 border-t border-slate-200/60 overflow-hidden">
+        {/* Deep Teal ambient backdrop glow */}
+        <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-brand-teal/5 blur-[140px] rounded-full pointer-events-none" />
 
-        <div className="max-w-6xl mx-auto text-center space-y-4 mb-20 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-slate-900">Our Services</h2>
-          <p className="text-slate-500 max-w-xl mx-auto text-sm">
-            Select an operations segment to inspect its integration framework rules and deployment pipelines.
+        <div className="max-w-4xl mx-auto text-center space-y-4 mb-20 relative z-10">
+
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+            Our Services
+          </h2>
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+            Select an operational domain to inspect its technical framework, execution methodology, and core deliverables.
           </p>
         </div>
 
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
-          {servicesData.map((service) => (
+        {/* 2-COLUMN BALANCED GRID (8 CARDS TOTAL: 4 ROWS x 2 COLS) */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 relative z-10">
+          {servicesData.map((service, index) => (
             <Link 
               key={service.slug} 
               href={`/services/${service.slug}`} 
-              className="group p-8 rounded-2xl bg-white border border-slate-200 shadow-sm transition-all duration-500 flex flex-col justify-between relative overflow-hidden h-64 min-h-[16rem]"
+              className="group p-8 sm:p-10 rounded-3xl bg-white border border-slate-200 shadow-sm transition-all duration-500 flex flex-col justify-between relative overflow-hidden min-h-[20rem] hover:shadow-2xl hover:border-brand-teal/40"
             >
-              <div className="absolute top-0 right-0 w-12 h-12 bg-gradient-to-br from-brand-teal to-teal-700 rounded-bl-full transition-all duration-700 ease-in-out group-hover:w-[150%] group-hover:h-[150%] group-hover:rounded-none z-0" />
+              {/* THE EXPANDING LIQUID BACKDROP EFFECT */}
+              <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-brand-teal to-teal-700 rounded-bl-full transition-all duration-700 ease-in-out group-hover:w-[160%] group-hover:h-[160%] group-hover:rounded-none z-0" />
 
-              <div className="relative z-10 space-y-3">
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-white transition-colors duration-300">
+              {/* TOP CONTENT LAYER */}
+              <div className="relative z-10 space-y-4">
+                <div className="flex items-center justify-between">
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-black text-slate-900 group-hover:text-white transition-colors duration-300 leading-tight">
                   {service.title}
                 </h3>
-                <p className="text-xs text-slate-500 group-hover:text-teal-50/80 transition-colors duration-300 leading-relaxed">
+                
+                <p className="text-sm text-slate-600 group-hover:text-teal-50/90 transition-colors duration-300 leading-relaxed">
                   {service.shortDescription}
                 </p>
               </div>
 
-              <div className="relative z-10 mt-6 flex items-center justify-between">
-                <span className="text-xs font-bold text-brand-teal group-hover:text-emerald-300 transition-colors duration-300">
-                  Inspect Blueprints
+              {/* BOTTOM CTA & ARROW LAYER */}
+              <div className="relative z-10 mt-8 pt-5 border-t border-slate-100 group-hover:border-white/15 flex items-center justify-between transition-colors duration-300">
+                <span className="text-xs sm:text-sm font-bold text-brand-teal group-hover:text-emerald-300 transition-colors duration-300">
+                  Inspect Framework & Deliverables
                 </span>
-                <div className="w-8 h-8 rounded-full bg-slate-100 group-hover:bg-white/20 flex items-center justify-center text-brand-teal group-hover:text-white transition-all duration-500 transform group-hover:rotate-45">
-                  <span className="text-sm font-bold">&rarr;</span>
+                <div className="w-9 h-9 rounded-full bg-slate-100 group-hover:bg-white/20 flex items-center justify-center text-brand-teal group-hover:text-white transition-all duration-500 transform group-hover:rotate-45 group-hover:scale-110 shadow-sm">
+                  <span className="text-base font-bold">&rarr;</span>
                 </div>
               </div>
+
             </Link>
           ))}
         </div>

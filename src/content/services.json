@@ -7,9 +7,11 @@
     "image": "/assets/service-proposal.png",
     "deliverables": [
       "Grant Proposal Development",
-      "Concept Notes & Project Design",
-      "Donor Mapping & Strategy",
-      "Logical Framework Development"
+      " Concept Notes ",
+      "Donor Mapping ",
+      "Project Design ",
+      "Logical Framework Development",
+      "Budget Development"
     ]
   },
   {
@@ -89,5 +91,27 @@
       "Strategic Plan & Guideline Drafting",
       "Risk Management & Compliance Systems"
     ]
+  },
+
+  {
+    "slug": "donor-reporting-and-documentation",
+    "title": "Donor Reporting & Documentation",
+    "shortDescription": "Compiling donor-compliant narrative reports, periodic progress documentation, case studies, risk assessments, and data visualization.",
+    "fullDescription": "TouchPad Consultancy delivers comprehensive donor reporting and evidence-based project documentation designed to meet the rigorous compliance and narrative standards of bilateral, multilateral, and international donor organizations.",
+    "subpoints": [
+      "Donor Narrative Reporting",
+      "Progress & Milestone Reporting",
+      "Success Stories & Human-Interest Case Stories",
+      "Interactive Data Visualization & Infographics",
+      "Risk, Constraints & Mitigation Reporting"
+    ],
+    "deliverables": [
+      "Quarterly, Semi-Annual & Annual Donor Narrative Reports",
+      "Mid-Term & Final Project Documentation Packages",
+      "High-Impact Field Case Studies & Beneficiary Stories",
+      "Executive Infographic Summaries & Dashboard Visuals",
+      "Risk Matrix & Challenge Management Briefs"
+    ]
   }
+
 ]

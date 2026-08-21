@@ -358,10 +358,10 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
 
           <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-lg leading-tight">
-            Evidence-Driven Development Consulting
+            Welcome to TouchPad Consultancy
           </h1>
           <p className="text-sm md:text-base text-teal-100/70 leading-relaxed max-w-2xl mx-auto drop-shadow">
-            Delivering high-quality proposal writing, research, technical advisory, MEAL, and organizational development services across Bangladesh.
+            We value integrity, accountability, evidence-based decision making, inclusion, innovation, professionalism and over all client satisfaction.
           </p>
         </div>
       </section>
@@ -372,21 +372,37 @@ export default function AboutPage() {
       <section className="relative w-full py-24 px-6 z-10 bg-white-300 text-white overflow-hidden border-b border-teal-500/20">
         <div className="max-w-6xl mx-auto space-y-16 relative z-10">
           
-          {/* Section Header */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-end">
-            <div className="lg:col-span-7 space-y-3">
-              <span className="text-xl font-bold text-teal-700 uppercase tracking-widest ">
-                Institutional Overview
-              </span>
-              <h2 className="text-3xl md:text-4xl font-black tracking-tight text-teal-400 leading-tight">
-                About TouchPad Consultancy
-              </h2>
-              <p className="text-sm text-gray-950 leading-relaxed max-w-2xl">
-                Touchpad Consultancy is a Bangladesh-based consulting firm established to provide high-quality proposal writing, research, technical advisory, monitoring and evaluation, learning, organizational development, and capacity strengthening services to development organizations.
-              </p>
-            </div>
-          </div>
+         {/* Section Header */}
+<div className="w-full space-y-4">
+  <span className="text-sm sm:text-base font-bold text-teal-700 uppercase tracking-widest block">
+    Institutional Overview
+  </span>
+  <h2 className="text-3xl md:text-5xl font-black tracking-tight text-teal-500 leading-tight">
+    About TouchPad Consultancy
+  </h2>
+  
+  <div className="space-y-4 text-base sm:text-lg text-slate-800 leading-relaxed pt-2">
+    <p>
+      TouchPad Consultancy, established in 2025, is a Bangladesh-based consulting 
+      firm determined to provide high-quality proposal writing, donor reporting, 
+      research, technical advisory, monitoring and evaluation, learning, organizational development, 
+      website development, and capacity strengthening services to strengthen organizations and companies.
+    </p>
 
+    <p>
+      Its consultants possess extensive professional experience in writing and implementing 
+      donor-funded projects and reports, conducting research, facilitating learning initiatives, 
+      designing development programs and websites with IT solutions, and supporting evidence-based 
+      decision-making across Bangladesh.
+    </p>
+
+    <p>
+      We commit to provide technically sound, practical, and client-oriented consultancy services that 
+      generate measurable value for our partners. We value integrity, accountability, evidence-based decision making, 
+      inclusion, innovation, professionalism, and overall client satisfaction.
+    </p>
+  </div>
+</div>
           {/* Interactive Activity Showcase Slider */}
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
@@ -474,20 +490,20 @@ export default function AboutPage() {
           ========================================================================= */}
       <section className="relative w-full py-20 px-6 z-10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-8 rounded-3xl bg-slate-950 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-teal-500/40 transition duration-300">
+          <div className="p-8 rounded-3xl bg-green-500 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-green-900 transition duration-300">
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition duration-500" />
-            <span className="text-xs font-bold text-teal-400 uppercase tracking-wider">Our Vision</span>
+            <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">Our Vision</span>
             <h3 className="text-2xl font-extrabold text-white">Trusted Technical Partner</h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-white leading-relaxed">
               To become a trusted technical partner for organizations worldwide by delivering innovative, evidence-driven, and sustainable consulting solutions.
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-slate-950 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-teal-500/40 transition duration-300">
+          <div className="p-8 rounded-3xl bg-green-500 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-teal-900 transition duration-300">
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition duration-500" />
-            <span className="text-xs font-bold text-teal-400 uppercase tracking-wider">Our Mission</span>
+            <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">Our Mission</span>
             <h3 className="text-2xl font-extrabold text-white">Strategic Excellence</h3>
-            <p className="text-sm text-slate-300 leading-relaxed">
+            <p className="text-sm text-white leading-relaxed">
               To strengthen organizational programming through quality proposal writing, research, technical excellence, capacity development, and strategic advisory services.
             </p>
           </div>
