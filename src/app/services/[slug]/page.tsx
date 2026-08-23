@@ -50,7 +50,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: `${title} | TouchPad Consultancy`,
       description,
-      images: [service.image || "/assets/Hero2.png"],
+      images: [service.image || "/assets/Her.png"],
     },
   };
 }

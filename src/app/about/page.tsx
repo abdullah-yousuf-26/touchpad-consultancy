@@ -3,6 +3,8 @@
 import { Users, UserCheck, Smartphone, MapPin, Globe2, ShieldCheck } from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
+import ColorBends from "@/components/ColorBends";
+
 
 // =========================================================================
 // 1. OPTIMIZED IMAGE PLACEHOLDER WRAPPER (Fast Loading & Zero Layout Shift)
@@ -56,7 +58,7 @@ function JourneyTimelineSection() {
       title: "Foundation & Vision Establishment",
       subtitle: "OFFICIAL INSTITUTIONAL LAUNCH",
       desc: "TouchPad Consultancy was formally established in Dhaka, Bangladesh, uniting expert consultants to serve NGOs and international development partners with high-quality advisory services.",
-      metrics: "Impact Target: Nationwide Coverage Reach"
+      metrics: ""
     },
     {
       year: "2025 - Q3",
@@ -111,14 +113,14 @@ function JourneyTimelineSection() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="relative w-full py-28 px-6 z-10 bg-slate-950 text-white overflow-hidden">
+    <section ref={sectionRef} className="relative w-full py-28 px-6 z-10 bg-green-400 text-white overflow-hidden">
       <div className="max-w-5xl mx-auto space-y-16 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-2">
-          <span className="text-xs font-bold text-teal-400 uppercase tracking-wider">Evolutionary Milestones</span>
+          <span className="text-xs font-bold text-teal-900 uppercase tracking-wider">Evolutionary Milestones</span>
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white">Our Organizational Journey</h2>
-          <p className="text-sm text-slate-400">Scroll to trace our growth from inception toward becoming a global technical partner.</p>
+          <p className="text-sm text-slate-900">Scroll to trace our growth from inception toward becoming a global technical partner.</p>
         </div>
 
         {/* Timeline Frame */}
@@ -151,7 +153,7 @@ function JourneyTimelineSection() {
                 <span 
                   className={`md:absolute md:-left-32 md:top-0 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full border inline-block mb-2 md:mb-0 transition-all duration-500 ${
                     isActive 
-                      ? "text-teal-400 bg-teal-500/10 border-teal-500/30 shadow-md" 
+                      ? "text-white-900 bg-teal-500/10 border-teal-500/30 shadow-md" 
                       : "text-slate-500 bg-slate-900 border-slate-800"
                   }`}
                 >
@@ -173,10 +175,7 @@ function JourneyTimelineSection() {
                   
                   <p className="text-xs md:text-sm text-slate-300 leading-relaxed mb-5">{milestone.desc}</p>
                   
-                  <div className="inline-flex items-center gap-2 text-[11px] font-bold text-teal-400 bg-slate-950 px-3.5 py-1.5 rounded-lg border border-teal-500/20">
-                    <span className={`w-2 h-2 rounded-full ${isActive ? "bg-emerald-400 animate-pulse" : "bg-slate-700"}`} />
-                    {milestone.metrics}
-                  </div>
+               
                 </div>
 
               </div>
@@ -341,27 +340,48 @@ export default function AboutPage() {
         .team-card-back { transform: rotateY(180deg); }
       `}</style>
 
-      {/* =========================================================================
-          HERO HEADER
+{/* =========================================================================
+          HERO HEADER WITH THREE.JS COLOR BENDS MOTION LAYER
           ========================================================================= */}
-      <section className="relative pt-44 pb-28 px-6 overflow-hidden border-b border-slate-200/60 text-white z-10 flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <OptimizedImage
-            src="/assets/Hero3.png"
-            alt="TouchPad Consultancy Corporate Operations"
-            priority={true}
-          />
-          <div className="absolute inset-0 bg-slate-550/95 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/40 to-slate-900" />
-        </div>
+      <section className="relative pt-44 pb-28 px-6 overflow-hidden border-b border-teal-500/20 text-white z-10 flex items-center justify-center bg-slate-950">
         
-        <div className="max-w-4xl mx-auto text-center space-y-4 relative z-10">
+        {/* THREE.JS MOTION LAYER */}
+        <div className="absolute inset-0 z-0">
+          <ColorBends
+            colors={["#042f2e", "#0f766e", "#14b8a6", "#10b981", "#022c22"]}
+            rotation={60}
+            speed={0.2}
+            transparent={false}
+            autoRotate={0.3}
+            scale={1.1}
+            frequency={1.2}
+            warpStrength={1.2}
+            mouseInfluence={0.7}
+            parallax={0.5}
+            noise={0.1}
+            iterations={2}
+            intensity={1.4}
+            bandWidth={6}
+            className="w-full h-full"
+          />
 
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-lg leading-tight">
-            Welcome to TouchPad Consultancy
+          {/* Vignette Overlay for Readability */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/60 via-slate-950/30 to-slate-950 pointer-events-none" />
+        </div>
+
+        {/* HERO CONTENT */}
+        <div className="max-w-4xl mx-auto text-center space-y-5 relative z-10">
+
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white drop-shadow-2xl leading-tight">
+            Welcome to{" "}
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-100">
+              TouchPad Consultancy
+            </span>
           </h1>
-          <p className="text-sm md:text-base text-teal-100/70 leading-relaxed max-w-2xl mx-auto drop-shadow">
-            We value integrity, accountability, evidence-based decision making, inclusion, innovation, professionalism and over all client satisfaction.
+
+          <p className="text-sm sm:text-base md:text-lg text-slate-200 leading-relaxed max-w-2xl mx-auto drop-shadow-md">
+            We value integrity, accountability, evidence-based decision making, inclusion, innovation, professionalism, and overall client satisfaction.
           </p>
         </div>
       </section>
@@ -374,9 +394,6 @@ export default function AboutPage() {
           
          {/* Section Header */}
 <div className="w-full space-y-4">
-  <span className="text-sm sm:text-base font-bold text-teal-700 uppercase tracking-widest block">
-    Institutional Overview
-  </span>
   <h2 className="text-3xl md:text-5xl font-black tracking-tight text-teal-500 leading-tight">
     About TouchPad Consultancy
   </h2>
@@ -567,32 +584,7 @@ export default function AboutPage() {
           ========================================================================= */}
       <JourneyTimelineSection />
 
-      {/* =========================================================================
-          WHY TOUCHPAD CONSULTANCY
-          ========================================================================= */}
-      <section className="relative w-full py-24 px-6 z-10 bg-slate-50">
-        <div className="max-w-6xl mx-auto space-y-16">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
-            <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">Value Proposition</span>
-            <h2 className="text-3xl font-black tracking-tight text-slate-900">Why TouchPad Consultancy</h2>
-            <p className="text-sm text-slate-500">We are committed to delivering practical, high-value consulting solutions through rigorous quality assurance.</p>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {whyChooseUs.map((item, idx) => (
-              <div key={idx} className="p-6 bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 space-y-3 group">
-                <div className="w-10 h-10 rounded-xl bg-teal-500/10 flex items-center justify-center text-teal-600 group-hover:bg-teal-500 group-hover:text-white transition duration-300">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                  </svg>
-                </div>
-                <h4 className="text-base font-bold text-slate-900">{item.title}</h4>
-                <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* =========================================================================
           DONOR EXPERIENCE MATRIX

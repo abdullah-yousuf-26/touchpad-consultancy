@@ -9,11 +9,12 @@ import {
   BarChart3, 
   GraduationCap, 
   Database, 
-  ShieldAlert, 
+  Hand,
+  
   Building2,
+  FileSpreadsheet,
   CheckCircle2,
   ArrowRight,
-  Layers,
   Send
 } from "lucide-react";
 
@@ -66,8 +67,9 @@ const iconMap: Record<string, React.ReactNode> = {
   "meal-systems": <BarChart3 className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />,
   "capacity-development": <GraduationCap className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />,
   "data-services": <Database className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />,
-  "pseah-safeguarding": <ShieldAlert className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />,
-  "strategy-policy": <Building2 className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />
+  "pseah-safeguarding": <Hand className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />, 
+  "strategy-policy": <Building2 className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />,
+  "donor-reporting-and-documentation": <FileSpreadsheet className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" /> 
 };
 
 // Default fallback image dictionary
@@ -78,7 +80,8 @@ const defaultImageMap: Record<string, string> = {
   "capacity-development": "/assets/service-capacity.png",
   "data-services": "/assets/service-data.png",
   "pseah-safeguarding": "/assets/service-pseah.png",
-  "strategy-policy": "/assets/service-strategy.png"
+  "strategy-policy": "/assets/service-strategy.png",
+  "donor-reporting-and-documentation": "/assets/service-reporting.png" 
 };
 
 // Typed services data source
@@ -133,30 +136,48 @@ export default function ServicesPage() {
             Consulting & Technical Advisory Services
           </h1>
           <p className="text-sm md:text-base text-teal-100/70 leading-relaxed max-w-2xl mx-auto drop-shadow">
-            Providing evidence-driven research, donor-grade proposals, MEAL frameworks, and capacity strengthening solutions for development partners[cite: 1].
+            Providing evidence-driven research, donor-grade proposals, MEAL frameworks, and capacity strengthening solutions for development partners.
           </p>
         </div>
       </section>
 
-      {/* =========================================================================
-          INTERACTIVE CATEGORY FILTER TABS
+{/* =========================================================================
+          ELEVATED FLOATING FILTER DOCK
           ========================================================================= */}
-      <section className="relative w-full py-6 px-6 z-10 bg-white/90 border-b border-slate-200/60 sticky top-0 backdrop-blur-md">
-        <div className="max-w-6xl mx-auto flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
-          <Layers className="w-5 h-5 text-teal-600 shrink-0 mr-2" />
-          {filterTabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setSelectedCategory(tab.id)}
-              className={`px-4 py-2 rounded-xl text-xs font-bold transition-all duration-300 shrink-0 border cursor-pointer ${
-                selectedCategory === tab.id
-                  ? "bg-slate-900 text-white border-teal-500/50 shadow-md scale-105"
-                  : "bg-slate-100 text-slate-600 border-slate-200 hover:bg-slate-200 hover:text-slate-900"
-              }`}
-            >
-              {tab.label}
-            </button>
-          ))}
+      <section className="sticky top-20 z-30 w-full py-4 px-4 sm:px-6">
+        <div className="max-w-6xl mx-auto">
+          {/* Outer Glassmorphic Dock Container */}
+          <div className="p-1.5 sm:p-2 rounded-2xl sm:rounded-full bg-white/80 backdrop-blur-xl border border-slate-200/80 shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex items-center gap-1.5 overflow-x-auto scrollbar-none">
+            
+
+            {/* Filter Tabs */}
+            <div className="flex items-center w-full">
+              {filterTabs.map((tab) => {
+                const isActive = selectedCategory === tab.id;
+                return (
+                  <button
+                    key={tab.id}
+                    onClick={() => setSelectedCategory(tab.id)}
+                    className={`relative px-4 py-2.5 rounded-xl sm:rounded-full text-xs font-bold transition-all duration-300 shrink-0 flex items-center gap-2 cursor-pointer ${
+                      isActive
+                        ? "bg-green-400 text-gray-900x shadow-md shadow-slate-950/20 border border-green-500/30"
+                        : "bg-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 border border-transparent"
+                    }`}
+                  >
+                    {/* Active Glowing Dot */}
+                    {isActive && (
+                      <span className="w-1.5 h-1.5 rounded-full bg-white animate-pulse shrink-0" />
+                    )}
+
+                    <span>{tab.label}</span>
+
+
+                  </button>
+                );
+              })}
+            </div>
+
+          </div>
         </div>
       </section>
 
@@ -169,7 +190,7 @@ export default function ServicesPage() {
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">Technical Capabilities</span>
             <h2 className="text-3xl font-black tracking-tight text-slate-900">Tailored Advisory Solutions</h2>
-            <p className="text-sm text-slate-500">Explore our structured expertise domains designed to generate measurable value for partners[cite: 1].</p>
+            <p className="text-sm text-slate-500">Explore our structured expertise domains designed to generate measurable value for partners.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -210,20 +231,7 @@ export default function ServicesPage() {
                     </p>
                   </div>
 
-                  {/* Sub-services / Deliverables if provided in JSON */}
-                  {service.deliverables && service.deliverables.length > 0 && (
-                    <div className="pt-2 border-t border-slate-200/80 space-y-2">
-                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-400">Key Sub-Services:</span>
-                      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                        {service.deliverables.slice(0, 4).map((sub: string, i: number) => (
-                          <li key={i} className="flex items-start gap-2 text-xs font-semibold text-slate-800">
-                            <CheckCircle2 className="w-3.5 h-3.5 text-teal-600 shrink-0 mt-0.5" />
-                            <span>{sub}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
+                  
                 </div>
 
                 {/* Card Dynamic Route Link */}
@@ -233,7 +241,7 @@ export default function ServicesPage() {
                     href={`/services/${service.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-teal-600 hover:text-teal-800 group-hover:translate-x-1 transition duration-300"
                   >
-                    Explore Domain Details <ArrowRight className="w-3.5 h-3.5" />
+                    Explore Details <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
                 </div>
 

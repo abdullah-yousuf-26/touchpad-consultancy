@@ -9,8 +9,9 @@ import {
   BarChart3, 
   GraduationCap, 
   Database, 
-  ShieldAlert, 
+  Hand, 
   Building2,
+  FileSpreadsheet,
   CheckCircle2,
   ArrowLeft,
   ShieldCheck,
@@ -35,8 +36,9 @@ const iconMap: Record<string, React.ReactNode> = {
   "meal-systems": <BarChart3 className="w-8 h-8 text-teal-600" />,
   "capacity-development": <GraduationCap className="w-8 h-8 text-teal-600" />,
   "data-services": <Database className="w-8 h-8 text-teal-600" />,
-  "pseah-safeguarding": <ShieldAlert className="w-8 h-8 text-teal-600" />,
-  "strategy-policy": <Building2 className="w-8 h-8 text-teal-600" />
+  "pseah-safeguarding": <Hand className="w-8 h-8 text-teal-600" />,
+  "strategy-policy": <Building2 className="w-8 h-8 text-teal-600" />,
+  "donor-reporting-and-documentation": <FileSpreadsheet className="w-8 h-8 text-teal-600" />
 };
 
 function ServiceDetailImage({ src, alt }: { src: string; alt: string }) {
@@ -93,8 +95,8 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
             src={service.image || "/assets/Hero2.png"} 
             alt={service.title} 
           />
-          <div className="absolute inset-0 bg-slate-950/90 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-slate-950/50 to-slate-900" />
+          <div className="absolute inset-0 backdrop-blur-[1px]" />
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 to-transperant" />
         </div>
         
         <div className="max-w-5xl mx-auto space-y-6 relative z-10">
@@ -106,13 +108,11 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
           </Link>
 
           <div className="space-y-3">
-            <span className="text-xs uppercase font-extrabold tracking-widest text-teal-400 bg-teal-500/10 px-3.5 py-1 rounded-full border border-teal-500/20">
-              {service.category || "Consultancy Domain"}
-            </span>
+
             <h1 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
               {service.title}
             </h1>
-            <p className="text-sm md:text-base text-teal-100/80 leading-relaxed max-w-3xl">
+            <p className="text-sm md:text-base text-white leading-relaxed max-w-3xl">
               {service.shortDescription || service.description}
             </p>
           </div>
