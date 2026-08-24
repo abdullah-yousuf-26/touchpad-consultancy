@@ -1,13 +1,28 @@
 "use client";
 
-import { Users, UserCheck, Smartphone, MapPin, Globe2, ShieldCheck } from "lucide-react";
+import { 
+  Users, 
+  UserCheck, 
+  Smartphone, 
+  MapPin, 
+  Globe2, 
+  ShieldCheck, 
+  Code2, 
+  CheckCircle2, 
+  Building2, 
+  Globe 
+} from "lucide-react";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import ColorBends from "@/components/ColorBends";
+import dynamic from "next/dynamic";
 
+const ColorBends = dynamic(() => import("@/components/ColorBends"), {
+  ssr: false,
+  loading: () => <div className="absolute inset-0 bg-slate-950" />,
+});
 
 // =========================================================================
-// 1. OPTIMIZED IMAGE PLACEHOLDER WRAPPER (Fast Loading & Zero Layout Shift)
+// 1. OPTIMIZED IMAGE PLACEHOLDER WRAPPER
 // =========================================================================
 interface OptimizedImageProps {
   src: string;
@@ -44,7 +59,7 @@ function OptimizedImage({ src, alt, className = "", priority = false }: Optimize
 }
 
 // =========================================================================
-// 2. SCROLL-REACTIVE JOURNEY TIMELINE COMPONENT (Top-Level Scope)
+// 2. SCROLL-REACTIVE JOURNEY TIMELINE COMPONENT
 // =========================================================================
 function JourneyTimelineSection() {
   const [scrollProgress, setScrollProgress] = useState(0);
@@ -89,14 +104,11 @@ function JourneyTimelineSection() {
 
       const rect = sectionRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-
-      // Calculate fill line progress percentage (0 to 100%)
       const totalHeight = rect.height;
       const currentScroll = windowHeight / 2 - rect.top;
       const progress = Math.max(0, Math.min(100, (currentScroll / totalHeight) * 100));
       setScrollProgress(progress);
 
-      // Determine which node is currently nearest to viewport center
       itemRefs.current.forEach((el, index) => {
         if (el) {
           const itemRect = el.getBoundingClientRect();
@@ -126,7 +138,7 @@ function JourneyTimelineSection() {
         {/* Timeline Frame */}
         <div className="relative border-l-2 border-slate-800 ml-4 md:ml-32 space-y-16">
           
-          {/* DYNAMIC GLOWING SCROLL PROGRESS LINE */}
+          {/* Glowing Scroll Progress Line */}
           <div 
             className="absolute left-[-2px] top-0 w-[2px] bg-gradient-to-b from-teal-400 via-emerald-400 to-cyan-400 shadow-[0_0_12px_rgba(20,184,166,0.8)] transition-all duration-150 ease-out"
             style={{ height: `${scrollProgress}%` }}
@@ -140,7 +152,7 @@ function JourneyTimelineSection() {
                 ref={(el) => { itemRefs.current[idx] = el; }}
                 className="relative pl-8 md:pl-12 transition-all duration-500"
               >
-                {/* TIMELINE NODE MARKER */}
+                {/* Timeline Node Marker */}
                 <div 
                   className={`absolute -left-[9px] top-1.5 w-4 h-4 rounded-full border-2 transition-all duration-500 ${
                     isActive 
@@ -149,7 +161,7 @@ function JourneyTimelineSection() {
                   }`} 
                 />
 
-                {/* YEAR BADGE */}
+                {/* Year Badge */}
                 <span 
                   className={`md:absolute md:-left-32 md:top-0 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full border inline-block mb-2 md:mb-0 transition-all duration-500 ${
                     isActive 
@@ -160,7 +172,7 @@ function JourneyTimelineSection() {
                   {milestone.year}
                 </span>
 
-                {/* MILESTONE CARD */}
+                {/* Milestone Card */}
                 <div 
                   className={`p-6 md:p-8 rounded-2xl border transition-all duration-500 ${
                     isActive 
@@ -174,8 +186,6 @@ function JourneyTimelineSection() {
                   </div>
                   
                   <p className="text-xs md:text-sm text-slate-300 leading-relaxed mb-5">{milestone.desc}</p>
-                  
-               
                 </div>
 
               </div>
@@ -193,7 +203,6 @@ function JourneyTimelineSection() {
 // 3. MAIN ABOUT PAGE COMPONENT
 // =========================================================================
 export default function AboutPage() {
-  // Activity Slider State
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoplay, setIsAutoplay] = useState(true);
 
@@ -221,39 +230,6 @@ export default function AboutPage() {
       tag: "Technical Advisory",
       desc: "Providing evidence-driven consulting, logical framework development, and proposal writing for major donor opportunities.",
       image: "/assets/activity-slide-4.png"
-    }
-  ];
-
-  const whyChooseUs = [
-    {
-      icon: "M12 6v6m0 0v6m0-6h6m-6 0H6",
-      title: "Experienced Technical Consultants",
-      desc: "Consultants with extensive hands-on history in designing and implementing donor-funded projects."
-    },
-    {
-      icon: "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
-      title: "Practical Sector Knowledge",
-      desc: "Deep familiarity with local socio-economic dynamics, field constraints, and institutional development frameworks."
-    },
-    {
-      icon: "M13 10V3L4 14h7v7l9-11h-7z",
-      title: "Evidence-Based Recommendations",
-      desc: "Data-driven research methodologies ensuring actionable, objective, and realistic policy guidance."
-    },
-    {
-      icon: "M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-      title: "Cost-Effective Consultancy",
-      desc: "Maximizing institutional value and budget efficiency without compromising deliverable quality."
-    },
-    {
-      icon: "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2",
-      title: "High-Quality Deliverables",
-      desc: "Rigorously peer-reviewed technical reports, logical frameworks, and baseline evaluation documents."
-    },
-    {
-      icon: "M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z",
-      title: "Timely Completion & Client Focus",
-      desc: "Strict adherence to project schedules, agile communication, and customized client-oriented solutions."
     }
   ];
 
@@ -296,11 +272,6 @@ export default function AboutPage() {
     }
   ];
 
-  const donorPartners = [
-    "UNICEF", "WFP", "FCDO", "IIED", "REDAA", 
-    "KOICA", "MOFA Japan", "UNESCO BNCU", "Embassy of Japan"
-  ];
-
   // Autoplay Slider Timer
   useEffect(() => {
     let interval: NodeJS.Timeout;
@@ -340,7 +311,7 @@ export default function AboutPage() {
         .team-card-back { transform: rotateY(180deg); }
       `}</style>
 
-{/* =========================================================================
+      {/* =========================================================================
           HERO HEADER WITH THREE.JS COLOR BENDS MOTION LAYER
           ========================================================================= */}
       <section className="relative pt-44 pb-28 px-6 overflow-hidden border-b border-teal-500/20 text-white z-10 flex items-center justify-center bg-slate-950">
@@ -371,8 +342,6 @@ export default function AboutPage() {
 
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center space-y-5 relative z-10">
-
-
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white drop-shadow-2xl leading-tight">
             Welcome to{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-100">
@@ -392,34 +361,35 @@ export default function AboutPage() {
       <section className="relative w-full py-24 px-6 z-10 bg-white-300 text-white overflow-hidden border-b border-teal-500/20">
         <div className="max-w-6xl mx-auto space-y-16 relative z-10">
           
-         {/* Section Header */}
-<div className="w-full space-y-4">
-  <h2 className="text-3xl md:text-5xl font-black tracking-tight text-teal-500 leading-tight">
-    About TouchPad Consultancy
-  </h2>
-  
-  <div className="space-y-4 text-base sm:text-lg text-slate-800 leading-relaxed pt-2">
-    <p>
-      TouchPad Consultancy, established in 2025, is a Bangladesh-based consulting 
-      firm determined to provide high-quality proposal writing, donor reporting, 
-      research, technical advisory, monitoring and evaluation, learning, organizational development, 
-      website development, and capacity strengthening services to strengthen organizations and companies.
-    </p>
+          {/* Section Header */}
+          <div className="w-full space-y-4">
+            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-teal-500 leading-tight">
+              About TouchPad Consultancy
+            </h2>
+            
+            <div className="space-y-4 text-base sm:text-lg text-slate-800 leading-relaxed pt-2">
+              <p>
+                TouchPad Consultancy, established in 2025, is a Bangladesh-based consulting 
+                firm determined to provide high-quality proposal writing, donor reporting, 
+                research, technical advisory, monitoring and evaluation, learning, organizational development, 
+                website development, and capacity strengthening services to strengthen organizations and companies.
+              </p>
 
-    <p>
-      Its consultants possess extensive professional experience in writing and implementing 
-      donor-funded projects and reports, conducting research, facilitating learning initiatives, 
-      designing development programs and websites with IT solutions, and supporting evidence-based 
-      decision-making across Bangladesh.
-    </p>
+              <p>
+                Its consultants possess extensive professional experience in writing and implementing 
+                donor-funded projects and reports, conducting research, facilitating learning initiatives, 
+                designing development programs and websites with IT solutions, and supporting evidence-based 
+                decision-making across Bangladesh.
+              </p>
 
-    <p>
-      We commit to provide technically sound, practical, and client-oriented consultancy services that 
-      generate measurable value for our partners. We value integrity, accountability, evidence-based decision making, 
-      inclusion, innovation, professionalism, and overall client satisfaction.
-    </p>
-  </div>
-</div>
+              <p>
+                We commit to provide technically sound, practical, and client-oriented consultancy services that 
+                generate measurable value for our partners. We value integrity, accountability, evidence-based decision making, 
+                inclusion, innovation, professionalism, and overall client satisfaction.
+              </p>
+            </div>
+          </div>
+
           {/* Interactive Activity Showcase Slider */}
           <div className="space-y-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
@@ -443,14 +413,14 @@ export default function AboutPage() {
                     className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-teal-500/20 border border-slate-700 hover:border-teal-500/50 flex items-center justify-center text-white transition"
                     aria-label="Previous Slide"
                   >
-                    ←
+                    &larr;
                   </button>
                   <button 
                     onClick={() => setCurrentSlide((prev) => (prev + 1) % activitySlides.length)}
                     className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-teal-500/20 border border-slate-700 hover:border-teal-500/50 flex items-center justify-center text-white transition"
                     aria-label="Next Slide"
                   >
-                    →
+                    &rarr;
                   </button>
                 </div>
               </div>
@@ -473,8 +443,8 @@ export default function AboutPage() {
               {/* Slide Content Side */}
               <div className="lg:col-span-5 space-y-6">
                 <div className="space-y-12">
-                  <span className="">
-                    {currentSlide + 1} / 0{activitySlides.length}
+                  <span>
+                    0{currentSlide + 1} / 0{activitySlides.length}
                   </span>
                   <h4 className="text-2xl font-black text-gray-950 leading-snug">
                     {activitySlides[currentSlide].title}
@@ -484,9 +454,9 @@ export default function AboutPage() {
                   </p>
                 </div>
 
-                {/* Interactive Slide Selection Dots & Thumbnails */}
+                {/* Interactive Slide Selection Dots */}
                 <div className="grid grid-cols-4 gap-2 pt-4 border-t border-slate-800">
-                  {activitySlides.map((slide, idx) => (
+                  {activitySlides.map((_, idx) => (
                     <button
                       key={idx}
                       onClick={() => setCurrentSlide(idx)}
@@ -550,19 +520,16 @@ export default function AboutPage() {
                     src={item.image}
                     alt={item.title}
                   />
-                  {/* WHITE SEMI-TRANSPARENT MASK FOR 100% READABILITY */}
                   <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] group-hover:bg-white/80 transition-all duration-300" />
                   <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/15 to-teal-50/50" />
                 </div>
 
                 {/* CONTENT LAYER */}
                 <div className="relative z-10 space-y-5">
-                  {/* 3D FLOATING ICON CONTAINER */}
                   <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white via-slate-50 to-teal-50/60 border border-teal-500/20 shadow-[0_8px_20px_rgba(20,184,166,0.15)] flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition duration-300">
                     {item.icon}
                   </div>
 
-                  {/* TEXT DETAILS */}
                   <div className="space-y-2">
                     <h4 className="text-lg font-extrabold text-slate-900 leading-snug group-hover:text-teal-700 transition">
                       {item.title}
@@ -584,57 +551,450 @@ export default function AboutPage() {
           ========================================================================= */}
       <JourneyTimelineSection />
 
-
-
-      {/* =========================================================================
-          DONOR EXPERIENCE MATRIX
+{/* =========================================================================
+          PARTNERSHIP AND AFFILIATION (ULTRA-SLOW 1:1 SQUARE CARDS & LOGOS)
           ========================================================================= */}
-      <section className="relative w-full py-16 px-6 bg-slate-950 text-white z-10 border-t border-slate-800">
-        <div className="max-w-6xl mx-auto text-center space-y-6">
-          <span className="text-xs font-bold text-teal-400 uppercase tracking-wider">Collective Experience</span>
-          <h3 className="text-2xl font-extrabold text-white">Assignments Involving Leading Global Partners</h3>
-          
-          <div className="flex flex-wrap justify-center items-center gap-3 md:gap-4 pt-2">
-            {donorPartners.map((donor, idx) => (
-              <span key={idx} className="px-5 py-2.5 rounded-full bg-slate-900 border border-teal-500/20 text-xs font-bold text-teal-100 shadow-md hover:border-teal-400/50 hover:bg-slate-800 transition duration-300">
-                {donor}
+      <section className="relative w-full py-10 bg-slate-950 text-white border-t border-slate-800 overflow-hidden">
+        
+        {/* Soft Ambient Glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-teal-500/5 blur-[160px] rounded-full pointer-events-none" />
+
+        {/* Section Header */}
+        <div className="max-w-4xl mx-auto text-center space-y-3 mb-16 px-6 relative z-10">
+          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
+            Partnership and Affiliation
+          </h2>
+          <p className="text-sm text-slate-400 max-w-2xl mx-auto">
+            Trusted by bilateral agencies, multilateral institutions, and civil society platforms.
+          </p>
+        </div>
+
+        {/* Gradient edge masks */}
+        <div className="relative w-full space-y-14">
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-48 bg-gradient-to-l from-slate-950 via-slate-950/80 to-transparent z-20 pointer-events-none" />
+
+          {/* ==========================================
+              ROW 1: PRESENT PARTNERS (LEFT -> RIGHT)
+              ========================================== */}
+          <div className="marquee-container space-y-4">
+            <div className="max-w-6xl mx-auto px-6 flex items-center gap-2">
+              <span className="px-3.5 py-1 rounded-full bg-teal-500/15 border border-teal-400/30 text-teal-300 text-[11px] font-extrabold uppercase tracking-wider">
+                Present Partners
               </span>
-            ))}
+              <div className="h-[1px] flex-1 bg-gradient-to-r from-teal-500/20 to-transparent" />
+            </div>
+
+            <div className="flex overflow-hidden">
+              <div className="animate-marquee-ltr flex items-center gap-10 py-2">
+                {[
+                  { name: "MOFA Japan", logo: "/assets/partners/mofa-japan.png" },
+                  { name: "Samsung C&T", logo: "/assets/partners/samsung.png" },
+                  { name: "Embassy of Japan", logo: "/assets/partners/embassy-japan.png" },
+                  { name: "UNESCO", logo: "/assets/partners/unesco.png" },
+                  // Duplicated for continuous loop
+                  { name: "MOFA Japan", logo: "/assets/partners/mofa-japan.png" },
+                  { name: "Samsung C&T", logo: "/assets/partners/samsung.png" },
+                  { name: "Embassy of Japan", logo: "/assets/partners/embassy-japan.png" },
+                  { name: "UNESCO", logo: "/assets/partners/unesco.png" },
+                  { name: "MOFA Japan", logo: "/assets/partners/mofa-japan.png" },
+                  { name: "Samsung C&T", logo: "/assets/partners/samsung.png" },
+                  { name: "Embassy of Japan", logo: "/assets/partners/embassy-japan.png" },
+                  { name: "UNESCO", logo: "/assets/partners/unesco.png" },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="w-44 sm:w-48 aspect-square p-4 rounded-2xl bg-slate-900/90 border border-teal-500/25 shadow-lg flex flex-col items-center justify-between text-center group hover:border-teal-400 hover:scale-105 transition-all duration-300 shrink-0"
+                  >
+                    {/* 1:1 SQUARE LOGO FRAME */}
+                    <div className="relative w-full h-[68%] aspect-square bg-white rounded-xl p-2 flex items-center justify-center overflow-hidden border border-slate-700/50 shadow-inner group-hover:shadow-teal-500/10">
+                      <Image
+                        src={item.logo}
+                        alt={item.name}
+                        fill
+                        className="object-contain p-1.5  group-hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLElement).style.display = "none";
+                        }}
+                      />
+                      <Building2 className="w-8 h-8 text-slate-400 group-hover:text-teal-600 transition" />
+                    </div>
+
+                    <span className="text-[11px] sm:text-xs font-bold text-slate-200 group-hover:text-teal-300 transition-colors leading-tight line-clamp-2 mt-2">
+                      {item.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
+
+          {/* ==========================================
+              ROW 2: IMMEDIATE PAST PARTNERS (RIGHT -> LEFT)
+              ========================================== */}
+          <div className="marquee-container space-y-4">
+            <div className="max-w-6xl mx-auto px-6 flex flex-row-reverse items-center gap-2">
+              <span className="px-3.5 py-1 rounded-full bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[11px] font-extrabold uppercase tracking-wider">
+                Immediate Past Partners
+              </span>
+              <div className="h-[1px] flex-1 bg-gradient-to-l from-emerald-500/20 to-transparent" />
+            </div>
+
+            <div className="flex overflow-hidden">
+              <div className="animate-marquee-rtl flex items-center gap-5 py-2">
+                {[
+                  { name: "Japan Platform", logo: "/assets/partners/japan-platform.png" },
+                  { name: "Government of Canada", logo: "/assets/partners/canada.png" },
+                  { name: "LG (Life's Good)", logo: "/assets/partners/lg.png" },
+                  { name: "Korea Expressway Corp", logo: "/assets/partners/korea-express.png" },
+                  { name: "AK Mall", logo: "/assets/partners/ak-mall.png" },
+                  { name: "Australian Aid", logo: "/assets/partners/australian-aid.png" },
+                  { name: "KOICA", logo: "/assets/partners/koica.png" },
+                  { name: "Seoul Metropolitan Govt", logo: "/assets/partners/seoul.png" },
+                  { name: "UNICEF", logo: "/assets/partners/unicef.png" },
+                  { name: "World Food Programme", logo: "/assets/partners/wfp.png" },
+                  // Duplicated for loop
+                  { name: "Japan Platform", logo: "/assets/partners/japan-platform.png" },
+                  { name: "Government of Canada", logo: "/assets/partners/canada.png" },
+                  { name: "LG (Life's Good)", logo: "/assets/partners/lg.png" },
+                  { name: "Korea Expressway Corp", logo: "/assets/partners/korea-express.png" },
+                  { name: "AK Mall", logo: "/assets/partners/ak-mall.png" },
+                  { name: "Australian Aid", logo: "/assets/partners/australian-aid.png" },
+                  { name: "KOICA", logo: "/assets/partners/koica.png" },
+                  { name: "Seoul Metropolitan Govt", logo: "/assets/partners/seoul.png" },
+                  { name: "UNICEF", logo: "/assets/partners/unicef.png" },
+                  { name: "World Food Programme", logo: "/assets/partners/wfp.png" },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="w-44 sm:w-48 aspect-square p-4 rounded-2xl bg-slate-900/90 border border-emerald-500/25 shadow-lg flex flex-col items-center justify-between text-center group hover:border-emerald-400 hover:scale-105 transition-all duration-300 shrink-0"
+                  >
+                    {/* 1:1 SQUARE LOGO FRAME */}
+                    <div className="relative w-full h-[68%] aspect-square bg-white rounded-xl p-2 flex items-center justify-center overflow-hidden border border-slate-700/50 shadow-inner group-hover:shadow-emerald-500/10">
+                      <Image
+                        src={item.logo}
+                        alt={item.name}
+                        fill
+                        className="object-contain p-1.5  group-hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLElement).style.display = "none";
+                        }}
+                      />
+                      <Building2 className="w-8 h-8 text-slate-400 group-hover:text-emerald-600 transition" />
+                    </div>
+
+                    <span className="text-[11px] sm:text-xs font-bold text-slate-200 group-hover:text-emerald-300 transition-colors leading-tight line-clamp-2 mt-2">
+                      {item.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* ==========================================
+              ROW 3: AFFILIATION (LEFT -> RIGHT)
+              ========================================== */}
+          <div className="marquee-container space-y-4">
+            <div className="max-w-6xl mx-auto px-6 flex items-center gap-2">
+              <span className="px-3.5 py-1 rounded-full bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-[11px] font-extrabold uppercase tracking-wider">
+                Institutional Affiliations
+              </span>
+              <div className="h-[1px] flex-1 bg-gradient-to-r from-cyan-500/20 to-transparent" />
+            </div>
+
+            <div className="flex overflow-hidden">
+              <div className="animate-marquee-ltr-slow flex items-center gap-5 py-2">
+                {[
+                  { name: "BSAF (Shishu Adhikar Forum)", logo: "/assets/partners/bsaf.png" },
+                  { name: "National Girl Child Advocacy", logo: "/assets/partners/girl-child.png" },
+                  { name: "Street Children Activist Network", logo: "/assets/partners/street-children.png" },
+                  { name: "Child Labor Elimination Platform", logo: "/assets/partners/child-labor.png" },
+                  { name: "Global School Meal Coalition", logo: "/assets/partners/school-meal.png" },
+                  { name: "PSEA Network", logo: "/assets/partners/psea-network.png" },
+                  { name: "NGO Platform Rohingya Refugee", logo: "/assets/partners/rohingya-platform.png" },
+                  // Duplicated for loop
+                  { name: "BSAF (Shishu Adhikar Forum)", logo: "/assets/partners/bsaf.png" },
+                  { name: "National Girl Child Advocacy", logo: "/assets/partners/girl-child.png" },
+                  { name: "Street Children Activist Network", logo: "/assets/partners/street-children.png" },
+                  { name: "Child Labor Elimination Platform", logo: "/assets/partners/child-labor.png" },
+                  { name: "Global School Meal Coalition", logo: "/assets/partners/school-meal.png" },
+                  { name: "PSEA Network", logo: "/assets/partners/psea-network.png" },
+                  { name: "NGO Platform Rohingya Refugee", logo: "/assets/partners/rohingya-platform.png" },
+                ].map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="w-44 sm:w-48 aspect-square p-4 rounded-2xl bg-slate-900/90 border border-cyan-500/25 shadow-lg flex flex-col items-center justify-between text-center group hover:border-cyan-400 hover:scale-105 transition-all duration-300 shrink-0"
+                  >
+                    {/* 1:1 SQUARE LOGO FRAME */}
+                    <div className="relative w-full h-[68%] aspect-square bg-white rounded-xl p-2 flex items-center justify-center overflow-hidden border border-slate-700/50 shadow-inner group-hover:shadow-cyan-500/10">
+                      <Image
+                        src={item.logo}
+                        alt={item.name}
+                        fill
+                        className="object-contain p-1.5 group-hover:grayscale-0 transition-all duration-300"
+                        onError={(e) => {
+                          (e.target as HTMLElement).style.display = "none";
+                        }}
+                      />
+                      <Globe className="w-8 h-8 text-slate-400 group-hover:text-cyan-600 transition" />
+                    </div>
+
+                    <span className="text-[11px] sm:text-xs font-bold text-slate-200 group-hover:text-cyan-300 transition-colors leading-tight line-clamp-2 mt-2">
+                      {item.name}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
-      {/* =========================================================================
-          ETHICS & GOVERNANCE
+{/* =========================================================================
+          2. WEBSITE DEVELOPMENT & DIGITAL SOLUTIONS (ORBITAL TECH RADAR)
           ========================================================================= */}
-      <section className="relative w-full py-20 px-6 z-10 bg-white border-t border-slate-200/60">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="space-y-4">
-            <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">Ethics & Governance</span>
-            <h2 className="text-3xl font-black text-slate-900">Strict Safeguarding & Professional Standards</h2>
-            <p className="text-sm text-slate-500 leading-relaxed">
-              We commit to technically sound, practical, and client-oriented consultancy services that generate measurable value while adhering strictly to ethical guidelines.
+      <section className="relative w-full py-24 px-6 z-10 bg-white border-t border-slate-200/80 overflow-hidden">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Text Content */}
+          <div className="lg:col-span-6 space-y-6">
+
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-teal-500 leading-tight">
+              Website Development & Digital Solutions
+            </h2>
+
+            <p className="text-base text-slate-700 leading-relaxed font-normal">
+              Web development and digital solutions, including responsive websites, web applications, 
+              e-commerce platforms, UI/UX, and AI-assisted applications. Our technical expertise includes 
+              <strong> React, Vite, Tailwind CSS, JavaScript, TypeScript, Node.js, Express.js, MongoDB,</strong> and <strong>Python</strong>, 
+              enabling us to deliver practical and scalable digital solutions.
             </p>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+              {[
+                "Responsive Websites",
+                "Web Applications",
+                "E-Commerce",
+                "UI/UX Design",
+                "AI-Assisted Apps",
+                "React / Vite",
+                "Tailwind CSS",
+                "Node & Express",
+                "MongoDB",
+                "Python"
+              ].map((tech, idx) => (
+                <span 
+                  key={idx} 
+                  className="px-3 py-1.5 rounded-lg bg-slate-100 border border-slate-200 text-xs font-bold text-slate-800"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-bold text-slate-800 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-500" />
-              PSEAH Compliance
+          {/* Right Column: 3D Concentric Orbit Radar */}
+          <div className="lg:col-span-6 flex items-center justify-center relative min-h-[420px] sm:min-h-[480px]">
+            
+            <div className="orbit-radar relative w-[340px] h-[340px] sm:w-[420px] sm:h-[420px] rounded-full flex items-center justify-center">
+              
+              {/* Radial Center Glow */}
+              <div className="absolute w-44 h-44 bg-teal-500/10 rounded-full blur-2xl pointer-events-none" />
+
+              {/* CENTER HUB */}
+              <div className="relative z-20 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-slate-950 border-2 border-teal-400/60 shadow-[0_0_25px_rgba(20,184,166,0.35)] flex flex-col items-center justify-center text-center p-2">
+                <Code2 className="w-6 h-6 text-teal-300" />
+                <span className="text-[9px] font-black text-slate-200 uppercase tracking-tighter mt-0.5">TouchPad</span>
+              </div>
+
+              {/* INNER ORBIT RING */}
+              <div className="absolute w-[200px] h-[200px] sm:w-[240px] sm:h-[240px] rounded-full border border-dashed border-teal-500/30 animate-orbit-slow">
+                
+                {/* Tech 1: React (Top) */}
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 group">
+                  <div className="animate-counter-rotate w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center p-2 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/react.png" alt="React" width={24} height={24} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-teal-700">Re</span>
+                  </div>
+                </div>
+
+                {/* Tech 2: TypeScript (Right) */}
+                <div className="absolute top-1/2 -right-5 -translate-y-1/2 group">
+                  <div className="animate-counter-rotate w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center p-2 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/typescript.png" alt="TypeScript" width={24} height={24} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-blue-600">TS</span>
+                  </div>
+                </div>
+
+                {/* Tech 3: Node.js (Bottom) */}
+                <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 group">
+                  <div className="animate-counter-rotate w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center p-2 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/nodejs.png" alt="Node.js" width={24} height={24} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-emerald-600">Node</span>
+                  </div>
+                </div>
+
+                {/* Tech 4: Tailwind CSS (Left) */}
+                <div className="absolute top-1/2 -left-5 -translate-y-1/2 group">
+                  <div className="animate-counter-rotate w-11 h-11 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center p-2 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/tailwind.png" alt="Tailwind" width={24} height={24} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-cyan-600">CSS</span>
+                  </div>
+                </div>
+
+              </div>
+
+              {/* OUTER ORBIT RING */}
+              <div className="absolute w-[310px] h-[310px] sm:w-[380px] sm:h-[380px] rounded-full border border-dashed border-slate-300 animate-orbit-reverse">
+                
+                {/* Tech 5: Python */}
+                <div className="absolute top-6 left-10 group">
+                  <div className="animate-counter-rotate-reverse w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center p-2.5 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/python.png" alt="Python" width={26} height={26} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-amber-600">Py</span>
+                  </div>
+                </div>
+
+                {/* Tech 6: MongoDB */}
+                <div className="absolute top-6 right-10 group">
+                  <div className="animate-counter-rotate-reverse w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center p-2.5 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/mongodb.png" alt="MongoDB" width={26} height={26} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-green-600">DB</span>
+                  </div>
+                </div>
+
+                {/* Tech 7: JavaScript */}
+                <div className="absolute bottom-6 right-10 group">
+                  <div className="animate-counter-rotate-reverse w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center p-2.5 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/javascript.png" alt="JavaScript" width={26} height={26} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-yellow-600">JS</span>
+                  </div>
+                </div>
+
+                {/* Tech 8: Express / Vite */}
+                <div className="absolute bottom-6 left-10 group">
+                  <div className="animate-counter-rotate-reverse w-12 h-12 rounded-full bg-white border border-slate-200 shadow-lg flex items-center justify-center p-2.5 hover:scale-125 transition-transform">
+                    <Image src="/assets/tech/vite.png" alt="Vite" width={26} height={26} className="object-contain" onError={(e) => { (e.target as HTMLElement).style.display = "none"; }} />
+                    <span className="text-[10px] font-bold text-purple-600">Vite</span>
+                  </div>
+                </div>
+
+              </div>
+
             </div>
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-bold text-slate-800 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-500" />
-              Gender-Sensitive
-            </div>
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-bold text-slate-800 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-500" />
-              Child Safeguarding
-            </div>
-            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-bold text-slate-800 flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-teal-500" />
-              Anti-Fraud & Privacy
-            </div>
+
           </div>
+
+        </div>
+      </section>
+
+{/* =========================================================================
+          3. ETHICS AND SAFEGUARDING (INDIVIDUAL FLOATING POINTS OVER IMAGE)
+          ========================================================================= */}
+      <section className="relative w-full py-24 px-6 z-10 bg-slate-50 border-t border-slate-200/80">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          
+          {/* LEFT SIDE: FEATURED IMAGE WITH INDIVIDUAL FLOATING PILL POINTS */}
+          <div className="lg:col-span-5 relative w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
+            
+            {/* Image Container */}
+            <div className="relative w-full h-[540px] sm:h-[580px]">
+              <OptimizedImage
+                src="/assets/ethics-safeguarding.png"
+                alt="Ethics and Safeguarding Standards"
+                className="object-cover"
+              />
+              
+              {/* Vignette Gradient for Clean Text Legibility */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/60 to-trnsparent" />
+            </div>
+
+            {/* Individual Items Layer Distributed Evenly Top to Bottom */}
+            <div className="absolute inset-0 p-6 sm:p-8 flex flex-col justify-between z-10">
+              <div className="flex flex-col gap-2 mt-48">
+                {[
+                  "PSEAH Zero-Tolerance Compliance",
+                  "Gender-Sensitive & Inclusive Approaches",
+                  "Child Safeguarding & Do No Harm",
+                  "Strict Data Privacy & Confidentiality",
+                  "Anti-Fraud & Financial Integrity",
+                  "Informed Consent & Research Ethics"
+                ].map((point, idx) => (
+                  <div 
+                    key={idx} 
+                    className="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-teal-500/30 shadow-lg hover:border-teal-400/60 hover:bg-slate-900/95 transition-all duration-300"
+                  >
+                    <div className="w-6 h-6 rounded-full bg-teal-500/20 border border-teal-400 flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-300" />
+                    </div>
+                    <span className="text-xs sm:text-sm font-bold text-slate-100 tracking-wide">
+                      {point}
+                    </span>
+                  </div>
+                ))}
+              </div>
+
+
+            </div>
+
+          </div>
+
+          {/* RIGHT SIDE: DETAILED TEXTUAL CONTENT */}
+          <div className="lg:col-span-7 space-y-6">
+            
+            <div className="space-y-3">
+              
+              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-teal-500 leading-tight">
+                Ethics and Safeguarding
+              </h2>
+            </div>
+
+            <p className="text-base text-slate-700 leading-relaxed font-normal">
+              TouchPad Consultancy adhere to strict professional standards including Prevention of Sexual Exploitation, 
+              Abuse and Harassment (PSEAH), Gender-sensitive approaches, Child safeguarding, Confidentiality, 
+              Anti-fraud policy, Research ethics and Data privacy.
+            </p>
+
+            {/* In-depth Institutional Details */}
+            <div className="space-y-4 pt-2 border-t border-slate-200">
+              
+              <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1">
+                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-teal-600 shrink-0" />
+                  Protection from Sexual Exploitation & Harassment (PSEAH)
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed pl-4">
+                  We enforce mandatory codes of conduct and anonymous whistleblowing mechanisms across all field operational sites to ensure full protection for beneficiaries and staff.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1">
+                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-teal-600 shrink-0" />
+                  Research Integrity & Field Participant Dignity
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed pl-4">
+                  Every evaluation adheres to strict protocols of informed voluntary consent, localized cultural sensitivity, non-discrimination, and verifiable data integrity.
+                </p>
+              </div>
+
+              <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1">
+                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-teal-600 shrink-0" />
+                  Confidentiality, Anti-Fraud & Data Security
+                </h4>
+                <p className="text-xs text-slate-600 leading-relaxed pl-4">
+                  Enterprise-grade encryption for all primary respondent databases, institutional documents, and financial audits guaranteeing transparent bilateral accountability.
+                </p>
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
       </section>
 

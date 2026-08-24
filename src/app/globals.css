@@ -207,3 +207,76 @@ body {
 .animate-bounce-slow {
   animation: bounceSlow 3.5s ease-in-out infinite;
 }
+
+
+@keyframes marquee-ltr {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+
+@keyframes marquee-rtl {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee-ltr {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 90s linear infinite;
+}
+
+.animate-marquee-rtl {
+  display: flex;
+  width: max-content;
+  animation: marquee-rtl 100s linear infinite;
+}
+
+.animate-marquee-ltr-slow {
+  display: flex;
+  width: max-content;
+  animation: marquee-ltr 110s linear infinite;
+}
+
+/* Pause on hover for interaction */
+.marquee-container:hover .animate-marquee-ltr,
+.marquee-container:hover .animate-marquee-rtl,
+.marquee-container:hover .animate-marquee-ltr-slow {
+  animation-play-state: paused;
+}
+
+
+/* Stack */
+
+@keyframes orbit-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes orbit-counter-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(-360deg); }
+}
+
+.animate-orbit-slow {
+  animation: orbit-rotate 40s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-rotate 55s linear infinite reverse;
+}
+
+.animate-counter-rotate {
+  animation: orbit-counter-rotate 40s linear infinite;
+}
+
+.animate-counter-rotate-reverse {
+  animation: orbit-counter-rotate 55s linear infinite reverse;
+}
+
+/* Pause orbit on hover */
+.orbit-radar:hover .animate-orbit-slow,
+.orbit-radar:hover .animate-orbit-reverse,
+.orbit-radar:hover .animate-counter-rotate,
+.orbit-radar:hover .animate-counter-rotate-reverse {
+  animation-play-state: paused;
+}
