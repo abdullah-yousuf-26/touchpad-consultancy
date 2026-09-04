@@ -16,6 +16,16 @@ export const metadata: Metadata = {
   },
   description:
     "Evidence-based research, donor-grade proposals, MEAL systems, and institutional capacity strengthening in Bangladesh.",
+
+    // ADD THIS BLOCK:
+  icons: {
+    icon: [
+      { url: "/assets/TPC Logo.png" },
+      { url: "/assets/TPC Logo.png", sizes: "32x32", type: "image/png" },
+    ],
+    shortcut: "/assets/TPC%20Logo.png",
+    apple: "/assets/TPC%20Logo.png",
+  },
   keywords: [
     "Development Consultancy Bangladesh",
     "MEAL Systems Dhaka",
