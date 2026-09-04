@@ -16,16 +16,18 @@ export const metadata: Metadata = {
   },
   description:
     "Evidence-based research, donor-grade proposals, MEAL systems, and institutional capacity strengthening in Bangladesh.",
-
-    // ADD THIS BLOCK:
   icons: {
     icon: [
-      { url: "/assets/TPC Logo.png" },
-      { url: "/assets/TPC Logo.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/android-chrome-192x192.png", sizes: "192x192", type: "image/png" },
+      { url: "/android-chrome-512x512.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/assets/TPC%20Logo.png",
-    apple: "/assets/TPC%20Logo.png",
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
   },
+  manifest: "/site.webmanifest",
   keywords: [
     "Development Consultancy Bangladesh",
     "MEAL Systems Dhaka",
@@ -84,7 +86,7 @@ export default function RootLayout({
     "@type": "ProfessionalService",
     name: "TouchPad Consultancy",
     url: "https://www.touchpadconsultancy.com",
-    logo: "https://www.touchpadconsultancy.com/assets/TPC%20Logo.png",
+    logo: "https://www.touchpadconsultancy.com/android-chrome-512x512.png",
     image: "https://www.touchpadconsultancy.com/assets/Hero2.png",
     description:
       "Specialized technical advisory firm delivering evidence-based research, donor proposals, MEAL systems, and capacity development in Bangladesh.",
@@ -117,27 +119,29 @@ export default function RootLayout({
         />
       </head>
       <body className="antialiased min-h-screen flex flex-col bg-white text-slate-950">
-        {/* Main Header navigation */}
         <Navbar />
-        
-        {/* Isolated content tracking frame */}
-        <main className="flex-grow w-full relative">
-          {children}
-        </main>
-        
-        {/* Footer locked beneath the main contents cleanly */}
+
+        <main className="flex-grow w-full relative">{children}</main>
+
         <Footer />
-        
-        {/* Floating overlays */}
         <FloatingShare />
-        <FixedWhatsApp /> 
+        <FixedWhatsApp />
 
         {/* HIDDEN MATRIX CORE: Processes the liquid gooey connection layers */}
-        <svg style={{ display: "block", height: 0, width: 0 }} version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          style={{ display: "block", height: 0, width: 0 }}
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <defs>
             <filter id="gooey-fluid-filter">
               <feGaussianBlur result="blur" stdDeviation="10" in="SourceGraphic" />
-              <feColorMatrix result="goo" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" mode="matrix" in="blur" />
+              <feColorMatrix
+                result="goo"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                mode="matrix"
+                in="blur"
+              />
               <feBlend in2="goo" in="SourceGraphic" />
             </filter>
           </defs>
