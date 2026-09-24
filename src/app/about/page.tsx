@@ -944,9 +944,7 @@ export default function AboutPage() {
                     key={idx}
                     className="flex items-center gap-3.5 px-4 py-3 rounded-xl bg-slate-900/80 backdrop-blur-md border border-teal-500/30 shadow-lg hover:border-teal-400/60 hover:bg-slate-900/95 transition-all duration-300"
                   >
-                    <div className="w-6 h-6 rounded-full bg-teal-500/20 border border-teal-400 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-3.5 h-3.5 text-teal-300" />
-                    </div>
+
                     <span className="text-xs sm:text-sm font-bold text-slate-100 tracking-wide">
                       {point}
                     </span>
@@ -975,7 +973,7 @@ export default function AboutPage() {
             <div className="space-y-4 pt-2 border-t border-slate-200">
               <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1">
                 <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-teal-600 shrink-0" />
+                  
                   Protection from Sexual Exploitation & Harassment (PSEAH)
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed pl-4">
@@ -987,7 +985,6 @@ export default function AboutPage() {
 
               <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1">
                 <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-teal-600 shrink-0" />
                   Research Integrity & Field Participant Dignity
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed pl-4">
@@ -999,7 +996,7 @@ export default function AboutPage() {
 
               <div className="p-4 rounded-2xl bg-white border border-slate-200/80 shadow-sm space-y-1">
                 <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-teal-600 shrink-0" />
+
                   Confidentiality, Anti-Fraud & Data Security
                 </h4>
                 <p className="text-xs text-slate-600 leading-relaxed pl-4">

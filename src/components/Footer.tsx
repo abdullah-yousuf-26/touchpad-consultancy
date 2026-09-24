@@ -23,7 +23,7 @@ export default function Footer() {
             <span className="text-brand-green">TouchPad</span> <span className="text-brand-teal font-medium">Consultancy</span>
           </h4>
           <p className="text-x text-white-100/70 leading-relaxed max-w-sm">
-            Providing secure architectural engineering blueprints and scalable enterprise IT transitions globally.
+            Providing strategic expertise and innovative consulting solutions to drive sustainable growth worldwide.
           </p>
           
           {/* Social Platforms Ingestion Array with Added WhatsApp Node */}
@@ -93,7 +93,7 @@ export default function Footer() {
           <Link href="/" className="text-x text-teal-100/80 hover:text-white transition">Home</Link>
           <Link href="/services" className="text-x text-teal-100/80 hover:text-white transition">Services</Link>
           <Link href="/about" className="text-x text-teal-100/80 hover:text-white transition">About</Link>
-          <Link href="/career" className="text-x text-teal-100/80 hover:text-white transition">Career</Link>
+          {/* <Link href="/career" className="text-x text-teal-100/80 hover:text-white transition">Career</Link> */}
         </div>
 
         {/* Column 4: Sister Ecosystems */}
@@ -120,8 +120,10 @@ export default function Footer() {
               </div>
               <div className="space-y-0.5">
                 <p className="text-[12px] uppercase font-bold tracking-wider text-teal-400">Address</p>
-                <a href="https://maps.app.goo.gl/LNccdhrQn7tkX3Ws5" className="text-teal-100/80 hover:text-white transition duration-200 block break-all">
-                Dhaka, Bangladesh
+                <a href="https://maps.app.goo.gl/R2MfWdkuhHtj9y5J6" className="text-teal-100/80 hover:text-white transition duration-200 block break-all">
+                House No. 1/A, Shafi Complex,<br />
+                4th Floor, Flat 4-B, Outer Circular Road, Moghbazar, Dhaka-1217,<br />
+                Bangladesh
                 </a>
               </div>
             </div>
@@ -136,7 +138,7 @@ export default function Footer() {
               <div className="space-y-0.5">
                 <p className="text-[12px] uppercase font-bold tracking-wider text-teal-400">Email</p>
                 <a href="mailto:info@touchpad-solutions.com" className="text-teal-100/80 hover:text-white transition duration-200 block break-all">
-                  info@touchpad-solutions.com
+                  info@touchpadconsultancy.com
                 </a>
               </div>
             </div>
