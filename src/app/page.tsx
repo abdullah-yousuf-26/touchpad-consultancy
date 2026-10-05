@@ -131,9 +131,9 @@ export default function Home() {
       </section>
 
       {/* 3. PINNED STICKY SCROLL SECTION */}
-      <div className="w-full max-w-full overflow-hidden">
+
         <CommitmentScroll />
-      </div>
+
 
       {/* 4. SERVICE ADVISORY MATRIX */}
       <section id="services" className="relative py-24 sm:py-32 px-4 sm:px-8 lg:px-12 bg-slate-50 border-t border-slate-200/60 overflow-hidden w-full">

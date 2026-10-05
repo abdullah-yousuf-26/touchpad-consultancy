@@ -117,10 +117,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-white text-slate-950 w-full max-w-full overflow-x-clip">
+      <body className="antialiased min-h-screen flex flex-col bg-white text-slate-950 w-full max-w-full">
         <Navbar />
 
-        <main className="flex-grow w-full max-w-full relative overflow-x-clip">{children}</main>
+        <main className="flex-grow w-full max-w-full relative">{children}</main>
 
         <Footer />
         <FloatingShare />
