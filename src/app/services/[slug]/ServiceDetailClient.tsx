@@ -107,14 +107,21 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
 
       {/* HERO HEADER */}
       <section className="relative pt-40 sm:pt-44 pb-24 sm:pb-28 px-4 sm:px-6 overflow-hidden border-b border-slate-200/60 text-white z-10">
-        <div className="absolute inset-0 z-0">
-          <ServiceDetailImage 
-            src={service.image || "/assets/Hero2.png"} 
-            alt={service.title} 
-          />
-          <div className="absolute inset-0 backdrop-blur-[1px]" />
-          <div className="absolute inset-0 bg-gradient-to-b from-gray-900 via-gray-950/80 to-slate-950" />
-        </div>
+<div className="absolute inset-0 z-0">
+  <ServiceDetailImage 
+    src={service.image || "/assets/Hero2.png"} 
+    alt={service.title} 
+  />
+  
+  {/* 1. Very light base tint just to soften raw bright spots */}
+  <div className="absolute inset-0 bg-slate-950/20" />
+
+  {/* 2. Left-to-right directional fade: solid dark behind text, completely clear on the right */}
+  <div className="absolute inset-0 bg-gradient-to-r from-slate-950/85 via-slate-950/50 to-transparent" />
+
+  {/* 3. Soft top/bottom edge feathering for smooth transition to navbar and content */}
+  <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-950/60" />
+</div>
         
         <div className="max-w-6xl mx-auto space-y-6 relative z-10">
           <Link 
