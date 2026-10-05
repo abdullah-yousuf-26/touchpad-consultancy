@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     /* Outer wrapper holds your premium logo gradient combined with an atmospheric image background asset */
-    <footer className="w-full bg-gradient-to-br from-brand-teal via-teal-950 to-brand-green py-10 px-6 text-white/80 relative overflow-hidden border-t border-teal-500/20">
+    <footer className="w-full max-w-full bg-gradient-to-br from-brand-teal via-teal-950 to-brand-green py-12 sm:py-16 px-4 sm:px-6 lg:px-8 text-white/80 relative overflow-hidden border-t border-teal-500/20">
       
-      {/* Background Image Layer blended natively via overlay opacity to capture the exact vibe of image_db1d9c.jpg */}
+      {/* Background Image Layer blended natively via overlay opacity */}
       <div 
         className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-25 pointer-events-none"
         style={{ backgroundImage: "url('/assets/footer-bg.png')" }}
@@ -14,19 +14,20 @@ export default function Footer() {
       {/* Dark tint mask layer ensures copy links stay completely crisp and readable */}
       <div className="absolute inset-0 bg-slate-950/40 pointer-events-none" />
 
-      {/* FIXED: This grid container wraps all 4 columns cleanly */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10 text-sm relative z-10 mb-16">
+      {/* RESPONSIVE GRID: 1 col on mobile, 2 cols on tablet, 5 cols on desktop */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10 text-sm relative z-10 mb-12 sm:mb-16">
         
         {/* Column 1 & 2: Core Identity */}
-        <div className="space-y-4 md:col-span-2">
+        <div className="space-y-4 sm:col-span-2 lg:col-span-2">
           <h4 className="text-white font-black text-2xl tracking-tight">
-            <span className="text-brand-green">TouchPad</span> <span className="text-brand-teal font-medium">Consultancy</span>
+            <span className="text-brand-green">TouchPad</span>{" "}
+            <span className="text-brand-teal font-medium">Consultancy</span>
           </h4>
-          <p className="text-x text-white-100/70 leading-relaxed max-w-sm">
+          <p className="text-xs sm:text-sm text-teal-100/80 leading-relaxed max-w-sm">
             Providing strategic expertise and innovative consulting solutions to drive sustainable growth worldwide.
           </p>
           
-          {/* Social Platforms Ingestion Array with Added WhatsApp Node */}
+          {/* Social Platforms Ingestion Array */}
           <div className="pt-2">
             <h5 className="text-white font-bold uppercase text-[12px] tracking-wider mb-3">Connect With Us</h5>
             <div className="flex items-center gap-5 text-teal-200">
@@ -49,7 +50,7 @@ export default function Footer() {
                 href="https://www.facebook.com/share/1SJXNFGLfn/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="hover:text-blue-800 hover:scale-110 transition-all duration-200"
+                className="hover:text-blue-400 hover:scale-110 transition-all duration-200"
                 aria-label="Facebook"
               >
                 <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
@@ -62,7 +63,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/touchpad-consultancy/" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="hover:text-blue-500 hover:scale-110 transition-all duration-200"
+                className="hover:text-blue-400 hover:scale-110 transition-all duration-200"
                 aria-label="LinkedIn"
               >
                 <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -75,7 +76,7 @@ export default function Footer() {
                 href="https://x.com/TConsultany" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="hover:text-gray-900 hover:scale-110 transition-all duration-200"
+                className="hover:text-white hover:scale-110 transition-all duration-200"
                 aria-label="X (Twitter)"
               >
                 <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
@@ -88,24 +89,23 @@ export default function Footer() {
         </div>
 
         {/* Column 3: Quick Links Directory */}
-        <div className="flex flex-col space-y-2">
-          <h5 className="text-white font-bold uppercase text-x tracking-wider mb-2">Quick Links</h5>
-          <Link href="/" className="text-x text-teal-100/80 hover:text-white transition">Home</Link>
-          <Link href="/services" className="text-x text-teal-100/80 hover:text-white transition">Services</Link>
-          <Link href="/about" className="text-x text-teal-100/80 hover:text-white transition">About</Link>
-          {/* <Link href="/career" className="text-x text-teal-100/80 hover:text-white transition">Career</Link> */}
+        <div className="flex flex-col space-y-2.5">
+          <h5 className="text-white font-bold uppercase text-xs tracking-wider mb-2">Quick Links</h5>
+          <Link href="/" className="text-xs sm:text-sm text-teal-100/80 hover:text-white transition">Home</Link>
+          <Link href="/services" className="text-xs sm:text-sm text-teal-100/80 hover:text-white transition">Services</Link>
+          <Link href="/about" className="text-xs sm:text-sm text-teal-100/80 hover:text-white transition">About</Link>
         </div>
 
         {/* Column 4: Sister Ecosystems */}
-        <div className="flex flex-col space-y-2">
-          <h5 className="text-white font-bold uppercase text-x tracking-wider mb-2">Ecosystem</h5>
-          <a href="https://main.touchpad-solutions.com/" target="_blank" rel="noopener noreferrer" className="text-x text-teal-100/80 hover:text-white transition">TouchPad Solutions</a>
-          <a href="https://learning.touchpad-solutions.com/" target="_blank" rel="noopener noreferrer" className="text-x text-teal-100/80 hover:text-white transition">TouchPad Learning Center</a>
+        <div className="flex flex-col space-y-2.5">
+          <h5 className="text-white font-bold uppercase text-xs tracking-wider mb-2">Ecosystem</h5>
+          <a href="https://main.touchpad-solutions.com/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-teal-100/80 hover:text-white transition">TouchPad Solutions</a>
+          <a href="https://learning.touchpad-solutions.com/" target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-teal-100/80 hover:text-white transition">TouchPad Learning Center</a>
         </div>
 
-        {/* Column 5: Contact Intelligence Column with Individual Layout Matrix */}
-        <div className="space-y-4 md:col-span-1">
-          <h5 className="text-white font-bold uppercase text-x tracking-wider mb-2">
+        {/* Column 5: Contact Intelligence Column */}
+        <div className="space-y-4 sm:col-span-2 lg:col-span-1">
+          <h5 className="text-white font-bold uppercase text-xs tracking-wider mb-2">
             Contact
           </h5>
           
@@ -119,11 +119,14 @@ export default function Footer() {
                 </svg>
               </div>
               <div className="space-y-0.5">
-                <p className="text-[12px] uppercase font-bold tracking-wider text-teal-400">Address</p>
-                <a href="https://maps.app.goo.gl/R2MfWdkuhHtj9y5J6" className="text-teal-100/80 hover:text-white transition duration-200 block break-all">
-                House No. 1/A, Shafi Complex,<br />
-                4th Floor, Flat 4-B, Outer Circular Road, Moghbazar, Dhaka-1217,<br />
-                Bangladesh
+                <p className="text-[11px] uppercase font-bold tracking-wider text-teal-400">Address</p>
+                <a 
+                  href="https://maps.app.goo.gl/R2MfWdkuhHtj9y5J6" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-teal-100/80 hover:text-white transition duration-200 block break-words leading-relaxed"
+                >
+                  House No. 1/A, Shafi Complex, 4th Floor, Flat 4-B, Outer Circular Road, Moghbazar, Dhaka-1217, Bangladesh
                 </a>
               </div>
             </div>
@@ -136,14 +139,14 @@ export default function Footer() {
                 </svg>
               </div>
               <div className="space-y-0.5">
-                <p className="text-[12px] uppercase font-bold tracking-wider text-teal-400">Email</p>
-                <a href="mailto:info@touchpad-solutions.com" className="text-teal-100/80 hover:text-white transition duration-200 block break-all">
+                <p className="text-[11px] uppercase font-bold tracking-wider text-teal-400">Email</p>
+                <a href="mailto:info@touchpadconsultancy.com" className="text-teal-100/80 hover:text-white transition duration-200 block break-all">
                   info@touchpadconsultancy.com
                 </a>
               </div>
             </div>
 
-            {/* Row 3: Global Node Voice Connection */}
+            {/* Row 3: Phone */}
             <div className="flex items-start gap-3 group/item">
               <div className="w-6 h-6 rounded bg-teal-500/10 flex items-center justify-center text-brand-green group-hover/item:text-brand-teal transition-colors shrink-0 mt-0.5">
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -151,8 +154,8 @@ export default function Footer() {
                 </svg>
               </div>
               <div className="space-y-0.5">
-                <p className="text-[12px] uppercase font-bold tracking-wider text-teal-400">Phone</p>
-                <a href="tel:+8801" className="text-teal-100/80 hover:text-white transition duration-200 block">
+                <p className="text-[11px] uppercase font-bold tracking-wider text-teal-400">Phone</p>
+                <a href="tel:+8801755673862" className="text-teal-100/80 hover:text-white transition duration-200 block">
                   +880 1755-673862
                 </a>
               </div>
@@ -162,17 +165,16 @@ export default function Footer() {
         </div>
 
       </div>
-      
-      {/* FIXED: Opened on Line 17, closed perfectly here to contain the grid */}
 
-      {/* GIANT BACKDROP BACKGROUND TYPOGRAPHY: Captures the exact layout scheme of image_db1d9c.jpg */}
-      <div className="w-full text-center relative pointer-events-none select-none overflow-hidden h-24 sm:h-48 mt-12">
-        <h3 className="text-[12vw] font-black tracking-tighter text-white/[0.15] leading-none absolute left-1/2 -translate-x-1/2 bottom-0 whitespace-nowrap">
+      {/* GIANT BACKDROP BACKGROUND TYPOGRAPHY */}
+      <div className="w-full text-center relative pointer-events-none select-none overflow-hidden h-20 sm:h-32 md:h-44 mt-6 sm:mt-10">
+        <h3 className="text-[14vw] sm:text-[12vw] font-black tracking-tighter text-white/[0.12] leading-none absolute left-1/2 -translate-x-1/2 bottom-0 whitespace-nowrap">
           TouchPad
         </h3>
       </div>
       
-      <div className="max-w-6xl mx-auto pt-6 border-t border-teal-400/20 text-center text-xs text-teal-200/60 relative z-10">
+      {/* Bottom Copyright Bar */}
+      <div className="max-w-6xl mx-auto pt-6 border-t border-teal-400/20 text-center text-xs text-teal-200/60 relative z-10 px-4">
         &copy; {new Date().getFullYear()} TouchPad Consultancy. All ecosystem layers deployed securely via Edge Network.
       </div>
     </footer>

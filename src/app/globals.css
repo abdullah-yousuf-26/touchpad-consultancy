@@ -6,19 +6,20 @@
 }
 
 :root {
-  --background: #f8fafc; /* Bright, clean premium slate-white background */
+  --background: #f8fafc;
   --foreground: #0f172a;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #f8fafc; /* Forcing the bright theme layout uniformly */
+    --background: #f8fafc;
     --foreground: #0f172a;
   }
 }
 
 html {
   scroll-behavior: smooth;
+  max-width: 100%;
 }
 
 body {
@@ -26,6 +27,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+  max-width: 100vw;
+  position: relative;
 }
 
 /* Smooth Infinite Loop Animation for the Clients Slider */
@@ -40,7 +43,6 @@ body {
   animation: infiniteScroll 25s linear infinite;
 }
 
-
 /* Custom Interactive Matrix for the Premium Get In Touch Trigger */
 .premium-cta-btn {
   cursor: pointer;
@@ -51,7 +53,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 700;
   color: #ffffff;
-  background: #10b981; /* Default brand-green */
+  background: #10b981;
   box-shadow: 0 0 4px 0 #10b981;
   transition: all 1s ease;
 }
@@ -63,7 +65,7 @@ body {
 .premium-cta-btn:hover {
   outline: 2px solid transparent;
   outline-offset: 4px;
-  box-shadow: 0 0 16px 0 #0891b2; /* Shifts to glowing brand-teal on hover */
+  box-shadow: 0 0 16px 0 #0891b2;
   animation: 
     ctaRipple 1s linear infinite, 
     ctaColorize 1s infinite;
@@ -85,7 +87,6 @@ body {
   filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/* Sequencing the triple arrow breakout translations */
 .premium-cta-btn svg polygon:nth-child(1) {
   transition: all 0.3s ease;
   transform: translateX(-55%);
@@ -110,15 +111,14 @@ body {
   animation: ctaArrowOpacity 1s infinite 0.2s;
 }
 
-/* Animation Keyframes translated for your Brand Colors */
 @keyframes ctaArrowOpacity {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.2; }
 }
 
 @keyframes ctaColorize {
-  0%, 100% { background: #10b981; } /* brand-green */
-  50% { background: #0891b2; }    /* blends beautifully to brand-teal */
+  0%, 100% { background: #10b981; }
+  50% { background: #0891b2; }
 }
 
 @keyframes ctaRipple {
@@ -136,7 +136,7 @@ body {
   }
 }
 
-/* Premium Organic Gooey Fluid CTA Matrix - High Contrast Version */
+/* Premium Organic Gooey Fluid CTA Matrix */
 .gooey-cta-btn {
   font-weight: 500;
   letter-spacing: 1px;
@@ -147,7 +147,6 @@ body {
   position: relative;
   z-index: 1;
   text-transform: uppercase;
-  /* UPGRADED: Set border and text to white for perfect visibility against dark hero images */
   border: 3px solid hwb(100 1% 4%); 
   color: #0c0101;
   background-color: #f8fafc;
@@ -155,7 +154,6 @@ body {
   transition: color 500ms ease, border-color 500ms ease;
   overflow: visible;
 }
-
 
 .gooey-cta-btn .blob-layer {
   height: 100%;
@@ -170,7 +168,7 @@ body {
 }
 
 .gooey-cta-btn .blob-layer div {
-  background-color: #0891b2; /* brand-teal fluid remains beautifully intact */
+  background-color: #0891b2;
   width: 36%;
   height: 100%;
   border-radius: 100%;
@@ -185,7 +183,6 @@ body {
 
 .gooey-cta-btn:hover {
   color: #ffffff;
-  /* UPGRADED: Smoothly transition border to match the expanding teal fluid */
   border-color: #0891b2; 
 }
 
@@ -193,21 +190,14 @@ body {
   transform: scale(1.5) translateY(0) translateZ(0);
 }
 
-
-/* Smooth gentle floating animation for side-dock items */
 @keyframes bounceSlow {
-  0%, 100% {
-    transform: translateY(-50%); /* Keeps the layout perfectly centered vertically */
-  }
-  50% {
-    transform: translateY(-58%); /* Gently moves upwards slightly */
-  }
+  0%, 100% { transform: translateY(-50%); }
+  50% { transform: translateY(-58%); }
 }
 
 .animate-bounce-slow {
   animation: bounceSlow 3.5s ease-in-out infinite;
 }
-
 
 @keyframes marquee-ltr {
   0% { transform: translateX(-50%); }
@@ -237,16 +227,13 @@ body {
   animation: marquee-ltr 110s linear infinite;
 }
 
-/* Pause on hover for interaction */
 .marquee-container:hover .animate-marquee-ltr,
 .marquee-container:hover .animate-marquee-rtl,
 .marquee-container:hover .animate-marquee-ltr-slow {
   animation-play-state: paused;
 }
 
-
 /* Stack */
-
 @keyframes orbit-rotate {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
@@ -273,7 +260,6 @@ body {
   animation: orbit-counter-rotate 55s linear infinite reverse;
 }
 
-/* Pause orbit on hover */
 .orbit-radar:hover .animate-orbit-slow,
 .orbit-radar:hover .animate-orbit-reverse,
 .orbit-radar:hover .animate-counter-rotate,
