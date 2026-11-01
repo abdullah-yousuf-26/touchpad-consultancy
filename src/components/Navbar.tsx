@@ -24,7 +24,7 @@ export default function Navbar() {
             />
           </div>
           
-          <span className="text-base sm:text-lg md:text-2xl font-black tracking-tight truncate">
+          <span className="text-base sm:text-lg md:text-2xl font-bold tracking-tight truncate">
             <span className="text-brand-green">TouchPad</span>{" "}
             <span className="text-brand-teal">Consultancy</span>
           </span>

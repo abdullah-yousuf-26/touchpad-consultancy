@@ -8,13 +8,14 @@ export default function FloatingShare() {
   return (
     <div 
       className="fixed bottom-6 right-6 z-50 font-sans"
+      onKeyDown={(event) => { if (event.key === "Escape") setIsOpen(false); }}
       onMouseEnter={() => setIsOpen(true)}
       onMouseLeave={() => setIsOpen(false)}
     >
       <div className="relative flex flex-col items-center">
         
         {/* 1. THE POP-UP TOOLTIP WINDOW */}
-        <div 
+        <div id="social-links"
           className={`absolute bottom-[68px] left-1/2 -translate-x-1/2 bg-white dark:bg-slate-900 rounded-2xl p-4 shadow-2xl transition-all duration-300 ease-out backdrop-blur-md border border-slate-200/50 dark:border-slate-800 flex items-center gap-3 ${
             isOpen 
               ? "opacity-100 scale-100 translate-y-0 visible pointer-events-auto" 
@@ -69,7 +70,11 @@ export default function FloatingShare() {
         </div>
 
         {/* 2. THE FLOATING GRADIENT BUTTON CONTEXT */}
-        <button 
+        <button
+          type="button"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls="social-links"
           className="flex items-center justify-center bg-gradient-to-r from-brand-teal to-brand-green text-white px-6 py-3.5 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-300 group cursor-pointer border border-white/10"
         >
           <span className="text-base font-bold tracking-wide mr-3 select-none group-hover:tracking-wider transition-all duration-300">

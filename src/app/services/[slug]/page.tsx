@@ -1,9 +1,10 @@
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import servicesData from "@/content/services.json";
 import ServiceDetailClient, { ServiceItem } from "./ServiceDetailClient";
 
 interface Props {
-  params: Promise<{ slug: string }> | { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 // 1. DYNAMIC SERVER-SIDE SEO METADATA
@@ -50,7 +51,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       card: "summary_large_image",
       title: `${title} | TouchPad Consultancy`,
       description,
-      images: [service.image || "/assets/Her.png"],
+      images: [service.image || "/assets/Hero2.png"],
     },
   };
 }
@@ -68,6 +69,8 @@ export default async function Page({ params }: Props) {
   const resolvedParams = await params;
   const typedServices = servicesData as ServiceItem[];
   const service = typedServices.find((s) => s.slug === resolvedParams.slug) || null;
+
+  if (!service) notFound();
 
   return <ServiceDetailClient service={service} />;
 }

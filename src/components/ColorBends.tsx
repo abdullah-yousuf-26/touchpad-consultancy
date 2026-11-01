@@ -169,24 +169,25 @@ export default function ColorBends({
     const material = new THREE.ShaderMaterial({
       vertexShader: vert,
       fragmentShader: frag,
+      // Props are applied by the update effect before the first animation frame.
       uniforms: {
         uCanvas: { value: new THREE.Vector2(1, 1) },
         uTime: { value: 0 },
-        uSpeed: { value: speed },
+        uSpeed: { value: 0.2 },
         uRot: { value: new THREE.Vector2(1, 0) },
         uColorCount: { value: 0 },
         uColors: { value: uColorsArray },
-        uTransparent: { value: transparent ? 1 : 0 },
-        uScale: { value: scale },
-        uFrequency: { value: frequency },
-        uWarpStrength: { value: warpStrength },
+        uTransparent: { value: 1 },
+        uScale: { value: 1 },
+        uFrequency: { value: 1 },
+        uWarpStrength: { value: 1 },
         uPointer: { value: new THREE.Vector2(0, 0) },
-        uMouseInfluence: { value: mouseInfluence },
-        uParallax: { value: parallax },
-        uNoise: { value: noise },
-        uIterations: { value: iterations },
-        uIntensity: { value: intensity },
-        uBandWidth: { value: bandWidth },
+        uMouseInfluence: { value: 1 },
+        uParallax: { value: 0.5 },
+        uNoise: { value: 0.15 },
+        uIterations: { value: 1 },
+        uIntensity: { value: 1.5 },
+        uBandWidth: { value: 6 },
       },
       premultipliedAlpha: true,
       transparent: true,
@@ -204,7 +205,7 @@ export default function ColorBends({
     rendererRef.current = renderer;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(0x000000, transparent ? 0 : 1);
+    renderer.setClearColor(0x000000, 0);
     renderer.domElement.style.width = "100%";
     renderer.domElement.style.height = "100%";
     renderer.domElement.style.display = "block";
