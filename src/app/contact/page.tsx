@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Image from "next/image";
 
 // =========================================================================
 // 1. FAQ ACCORDION SUB-COMPONENT FRAMEWORK (Scoped Globally for the Page Node)
@@ -68,7 +69,7 @@ export default function ContactPage() {
         
         {/* THE FULL-BLEED BACKGROUND IMAGE */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <Image fill sizes="100vw"
             src="/assets/contact-us.png" 
             alt="TouchPad Integration Matrix Background" 
             className="w-full h-full object-cover object-center"
@@ -83,7 +84,7 @@ export default function ContactPage() {
           <p className="text-xs uppercase font-bold tracking-widest text-teal-400 drop-shadow-md">
             Secure Node Gateway
           </p>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-lg leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg leading-tight">
             Initiate Integration Sequence
           </h1>
           <p className="text-sm md:text-base text-teal-100/70 leading-relaxed max-w-2xl mx-auto drop-shadow">
@@ -101,7 +102,7 @@ export default function ContactPage() {
           <div className="lg:col-span-5 space-y-8">
             <div className="space-y-5">
               <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">Contact Channels</span>
-              <h2 className="text-3xl font-extrabold tracking-tight text-slate-900">Get In Touch With Our Team</h2>
+              <h2 className="text-3xl font-bold tracking-tight text-slate-900">Get In Touch With Our Team</h2>
               <p className="text-sm text-slate-500 leading-relaxed">
                 Fill out the data ingestion form or dial straight into our active grid lines. Our engineering department handles response validation within 1-2 business cycles.
               </p>
@@ -114,7 +115,7 @@ export default function ContactPage() {
                 <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400">
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 0C7.58 0 4 3.58 4 8c0 5.25 7 14 7 14s7-8.75 7-14c0-4.42-3.58-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
                 </div>
-                <h4 className="text-x uppercase font-bold text-white">Head Office</h4>
+                <h4 className="text-xs uppercase font-bold text-white">Head Office</h4>
                 <p className="text-xs font-semibold text-teal-900/90">Dhaka, Bangladesh</p>
               </div>
 
@@ -123,7 +124,7 @@ export default function ContactPage() {
                 <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400">
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
                 </div>
-                <h4 className="text-x uppercase font-bold text-white">Call Center</h4>
+                <h4 className="text-xs uppercase font-bold text-white">Call Center</h4>
                 <a href="tel:+8801755673862" className="text-xs font-semibold text-teal-900 block hover:text-green-300 transition duration-250">+880 1755-673862</a>
               </div>
 
@@ -132,7 +133,7 @@ export default function ContactPage() {
                 <div className="w-8 h-8 rounded-lg bg-green-900/10 flex items-center justify-center text-teal-400">
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                 </div>
-                <h4 className="text-x uppercase font-bold text-white">Email</h4>
+                <h4 className="text-xs uppercase font-bold text-white">Email</h4>
                 <a href="mailto:contact@touchpadsolutions.com" className="text-xs font-semibold text-teal-900 block hover:text-teal-300 transition duration-250 truncate">contact@touchpadsolutions.com</a>
               </div>
 
@@ -141,7 +142,7 @@ export default function ContactPage() {
                 <div className="w-8 h-8 rounded-lg bg-teal-500/10 flex items-center justify-center text-teal-400">
                   <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z"/></svg>
                 </div>
-                <h4 className="text-x uppercase font-bold text-white">Active Windows</h4>
+                <h4 className="text-xs uppercase font-bold text-white">Active Windows</h4>
                 <p className="text-xs font-semibold text-teal-900">Sat - Sun: 09am - 09pm</p>
               </div>
             </div>
@@ -149,42 +150,42 @@ export default function ContactPage() {
 
           {/* RIGHT CONTAINER MATRIX: Secure Form System */}
           <div className="lg:col-span-7 bg-slate-300 text-white border border-teal-800 p-8 rounded-3xl shadow-2xl">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-teal-800 uppercase tracking-wider">First Name</label>
-                  <input type="text" required placeholder="Enter first name" value={formData.firstName} onChange={(e)=>setFormData({...formData, firstName: e.target.value})}
+                  <label htmlFor="firstName" className="text-xs font-bold text-teal-800 uppercase tracking-wider">First Name</label>
+                  <input id="firstName" name="firstName" autoComplete="given-name" type="text" required placeholder="Enter first name" value={formData.firstName} onChange={(e)=>setFormData({...formData, firstName: e.target.value})}
                     className="w-full bg-slate-500 border border-teal-900 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-teal-500 text-white placeholder-white" />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-teal-800 uppercase tracking-wider">Last Name</label>
-                  <input type="text" required placeholder="Enter last name" value={formData.lastName} onChange={(e)=>setFormData({...formData, lastName: e.target.value})}
+                  <label htmlFor="lastName" className="text-xs font-bold text-teal-800 uppercase tracking-wider">Last Name</label>
+                  <input id="lastName" name="lastName" autoComplete="family-name" type="text" required placeholder="Enter last name" value={formData.lastName} onChange={(e)=>setFormData({...formData, lastName: e.target.value})}
                     className="w-full bg-slate-500 border border-teal-900 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-teal-500 text-white placeholder-white" />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-teal-800 uppercase tracking-wider">Work Email</label>
-                  <input type="email" required placeholder="name@company.com" value={formData.email} onChange={(e)=>setFormData({...formData, email: e.target.value})}
+                  <label htmlFor="email" className="text-xs font-bold text-teal-800 uppercase tracking-wider">Work Email</label>
+                  <input id="email" name="email" autoComplete="email" type="email" required placeholder="name@company.com" value={formData.email} onChange={(e)=>setFormData({...formData, email: e.target.value})}
                     className="w-full bg-slate-500 border border-teal-900 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-teal-500 text-white placeholder-white" />
                 </div>
                 <div className="space-y-1">
-                  <label className="text-xs font-bold text-teal-800 uppercase tracking-wider">Phone Number</label>
-                  <input type="tel" placeholder="+880 1XXX-XXXXXX" value={formData.phone} onChange={(e)=>setFormData({...formData, phone: e.target.value})}
+                  <label htmlFor="phone" className="text-xs font-bold text-teal-800 uppercase tracking-wider">Phone Number</label>
+                  <input id="phone" name="phone" autoComplete="tel" type="tel" placeholder="+880 1XXX-XXXXXX" value={formData.phone} onChange={(e)=>setFormData({...formData, phone: e.target.value})}
                     className="w-full bg-slate-500 border border-teal-900 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-teal-500 text-white placeholder-white" />
                 </div>
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-teal-800 uppercase tracking-wider">Company Name (Optional)</label>
-                <input type="text" placeholder="Enter business entity" value={formData.company} onChange={(e)=>setFormData({...formData, company: e.target.value})}
+                <label htmlFor="company" className="text-xs font-bold text-teal-800 uppercase tracking-wider">Company Name (Optional)</label>
+                <input id="company" name="company" autoComplete="organization" type="text" placeholder="Enter business entity" value={formData.company} onChange={(e)=>setFormData({...formData, company: e.target.value})}
                   className="w-full bg-slate-500 border border-teal-900 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-teal-500 text-white placeholder-white" />
               </div>
 
               <div className="space-y-1">
-                <label className="text-xs font-bold text-teal-800 uppercase tracking-wider">Project Objectives / Message</label>
-                <textarea rows={4} required placeholder="Describe system scope or timeline constraints..." value={formData.message} onChange={(e)=>setFormData({...formData, message: e.target.value})}
+                <label htmlFor="message" className="text-xs font-bold text-teal-800 uppercase tracking-wider">Project Objectives / Message</label>
+                <textarea id="message" name="message" autoComplete="off" rows={4} required placeholder="Describe system scope or timeline constraints..." value={formData.message} onChange={(e)=>setFormData({...formData, message: e.target.value})}
                   className="w-full bg-slate-500 border border-teal-900 px-4 py-3 rounded-xl text-sm focus:outline-none focus:border-teal-500 text-white placeholder-white resize-none" />
               </div>
 
@@ -232,14 +233,14 @@ export default function ContactPage() {
         `}</style>
 
         <div className="max-w-4xl mx-auto text-center mb-16">
-          <span className="text-x font-bold text-teal-600 uppercase tracking-wider">Ecosystem Bridges</span>
-          <h2 className="text-3xl font-black tracking-tight text-slate-900 mt-1">Connect to Our Social Media </h2>
+          <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">Ecosystem Bridges</span>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 mt-1">Connect to Our Social Media </h2>
         </div>
 
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-20 justify-center perspective-container">
           
           {/* NODE 1: FACEBOOK NODE */}
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-64 rounded-2xl cursor-pointer">
+          <a href="https://www.facebook.com/share/1SJXNFGLfn/" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-64 rounded-2xl cursor-pointer">
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 opacity-30 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-500" />
             <div className="flip-card-inner">
               <div className="flip-card-front bg-slate-950 border border-white/5 flex flex-col items-center justify-center p-6 shadow-xl">
@@ -252,7 +253,7 @@ export default function ContactPage() {
                 <div className="absolute top-10 left-10 w-32 h-32 bg-cyan-400/20 rounded-full blur-2xl pointer-events-none" />
                 <div className="absolute left-2 px-3 py-2 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Meta Pipeline</div>
                 <div className="text-center mt-12 relative z-10">
-                  <p className="text-x font-medium leading-relaxed text-blue-100/90">Follow us on Facebook for community updates and digital solutions.</p>
+                  <p className="text-xs font-medium leading-relaxed text-blue-100/90">Follow us on Facebook for community updates and digital solutions.</p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative z-10">
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -264,7 +265,7 @@ export default function ContactPage() {
           </a>
 
           {/* NODE 2: X TERMINAL NODE */}
-          <a href="https://x.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-64 rounded-2xl cursor-pointer">
+          <a href="https://x.com/TConsultany" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-64 rounded-2xl cursor-pointer">
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-white via-slate-400 to-white-700 opacity-30 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-500" />
             <div className="flip-card-inner">
               <div className="flip-card-front bg-slate-950 border border-white/5 flex flex-col items-center justify-center p-6 shadow-xl">
@@ -277,7 +278,7 @@ export default function ContactPage() {
                 <div className="absolute top-10 left-10 w-32 h-32 bg-slate-400/10 rounded-full blur-2xl pointer-events-none" />
                 <div className="absolute left-2 px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Signal Broadcast</div>
                 <div className="text-center mt-12 relative z-10">
-                  <p className="text-x font-medium leading-relaxed text-zinc-300">Connected to us with X to catch real-time ecosystem patches and insights.</p>
+                  <p className="text-xs font-medium leading-relaxed text-zinc-300">Connected to us with X to catch real-time ecosystem patches and insights.</p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative z-10">
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -289,7 +290,7 @@ export default function ContactPage() {
           </a>
 
           {/* NODE 3: LINKEDIN NODE */}
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-64 rounded-2xl cursor-pointer">
+          <a href="https://www.linkedin.com/company/touchpad-consultancy/" target="_blank" rel="noopener noreferrer" className="group relative block w-full h-64 rounded-2xl cursor-pointer">
             <div className="absolute -inset-0.5 rounded-2xl bg-gradient-to-r from-blue-700 via-indigo-500 to-teal-600 opacity-30 blur-sm group-hover:opacity-100 group-hover:blur-md transition-all duration-500" />
             <div className="flip-card-inner">
               <div className="flip-card-front bg-slate-950 border border-white/5 flex flex-col items-center justify-center p-6 shadow-xl">
@@ -302,7 +303,7 @@ export default function ContactPage() {
                 <div className="absolute top-10 left-10 w-32 h-32 bg-indigo-500/20 rounded-full blur-2xl pointer-events-none" />
                 <div className="absolute left-2 px-3 py-1 bg-white/10 rounded-full text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Corporate Node</div>
                 <div className="text-center mt-12 relative z-10">
-                  <p className="text-x font-medium leading-relaxed text-indigo-100/90">Get in touch with LinkedIn to track enterprise solutions and networks.</p>
+                  <p className="text-xs font-medium leading-relaxed text-indigo-100/90">Get in touch with LinkedIn to track enterprise solutions and networks.</p>
                 </div>
                 <div className="w-10 h-10 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-white relative z-10">
                   <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -323,11 +324,11 @@ export default function ContactPage() {
           {/* Left Sticky Column Framework */}
           <div className="lg:col-span-5 space-y-4 lg:sticky lg:top-32">
             <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">Common Questions</span>
-            <h2 className="text-4xl lg:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
               Frequently <br />asked questions.
             </h2>
             <p className="text-sm text-slate-500 pt-2">
-              Can't find what you're looking for?{" "}
+              Can&apos;t find what you&apos;re looking for?{" "}
               <a href="#contact-form" className="text-teal-600 font-bold hover:underline transition">
                 Contact support
               </a>

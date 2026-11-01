@@ -60,7 +60,7 @@ export default function CommitmentScroll() {
                 Why TouchPad Consultancy
               </div>
 
-              <h3 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight text-white leading-tight drop-shadow-md">
+              <h3 className="text-xl xs:text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white leading-tight drop-shadow-md">
                 Our Institutional Commitments & Delivery Standards.
               </h3>
 

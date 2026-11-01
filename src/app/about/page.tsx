@@ -10,7 +10,6 @@ import {
   MapPin,
   Globe2,
   ShieldCheck,
-  CheckCircle2,
   Building2,
 } from "lucide-react";
 
@@ -153,7 +152,7 @@ function JourneyTimelineSection() {
           <span className="text-xs font-bold text-teal-900 uppercase tracking-wider">
             Evolutionary Milestones
           </span>
-          <h2 className="text-3xl md:text-4xl font-black tracking-tight text-white">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white">
             Our Organizational Journey
           </h2>
           <p className="text-sm text-slate-900">
@@ -190,9 +189,9 @@ function JourneyTimelineSection() {
 
                 {/* Year Badge */}
                 <span
-                  className={`md:absolute md:-left-32 md:top-0 text-xs font-black uppercase tracking-wider px-3 py-1 rounded-full border inline-block mb-2 md:mb-0 transition-all duration-500 ${
+                  className={`md:absolute md:-left-32 md:top-0 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full border inline-block mb-2 md:mb-0 transition-all duration-500 ${
                     isActive
-                      ? "text-white-900 bg-teal-500/10 border-teal-500/30 shadow-md"
+                      ? "text-white bg-teal-500/10 border-teal-500/30 shadow-md"
                       : "text-slate-500 bg-slate-900 border-slate-800"
                   }`}
                 >
@@ -263,7 +262,7 @@ export default function AboutPage() {
     {
       title: "Wide Consultant Network",
       desc: "Access to multidisciplinary sector specialists across Bangladesh.",
-      image: "/assets/capacity-1.png",
+      image: "/assets/service-capacity.jpg",
       icon: (
         <Users className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />
       ),
@@ -271,7 +270,7 @@ export default function AboutPage() {
     {
       title: "Experienced Enumerator Pool",
       desc: "Trained field staff for rapid baseline and endline primary data gathering.",
-      image: "/assets/capacity-2.png",
+      image: "/assets/activity-slide-1.jpg",
       icon: (
         <UserCheck className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />
       ),
@@ -279,7 +278,7 @@ export default function AboutPage() {
     {
       title: "Digital Data Collection Systems",
       desc: "Mobile-enabled questionnaire deployment with live error checking.",
-      image: "/assets/capacity-3.png",
+      image: "/assets/service-data.jpg",
       icon: (
         <Smartphone className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />
       ),
@@ -287,7 +286,7 @@ export default function AboutPage() {
     {
       title: "Remote Supervision Capability",
       desc: "GPS tracking and quality assurance protocols for remote field monitoring.",
-      image: "/assets/capacity-4.png",
+      image: "/assets/activity-slide-2.jpg",
       icon: (
         <MapPin className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />
       ),
@@ -295,7 +294,7 @@ export default function AboutPage() {
     {
       title: "Online Collaboration Platforms",
       desc: "Seamless interaction, knowledge sharing, and draft review workflows.",
-      image: "/assets/capacity-5.png",
+      image: "/assets/Hero2.png",
       icon: (
         <Globe2 className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />
       ),
@@ -303,7 +302,7 @@ export default function AboutPage() {
     {
       title: "Secure Document Management",
       desc: "Strict data privacy, encryption, and anti-fraud operational safeguards.",
-      image: "/assets/capacity-6.png",
+      image: "/assets/service-reporting.jpg",
       icon: (
         <ShieldCheck className="w-7 h-7 text-teal-600 drop-shadow-[0_4px_10px_rgba(20,184,166,0.5)]" />
       ),
@@ -385,7 +384,7 @@ export default function AboutPage() {
 
         {/* HERO CONTENT */}
         <div className="max-w-4xl mx-auto text-center space-y-5 relative z-10">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-white drop-shadow-2xl leading-tight">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white drop-shadow-2xl leading-tight">
             Welcome to{" "}
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-300 via-emerald-300 to-teal-100">
               TouchPad Consultancy
@@ -406,7 +405,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto space-y-16 relative z-10">
           {/* Section Header */}
           <div className="w-full space-y-4">
-            <h2 className="text-3xl md:text-5xl font-black tracking-tight text-teal-500 leading-tight">
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-teal-500 leading-tight">
               About TouchPad Consultancy
             </h2>
 
@@ -503,7 +502,7 @@ export default function AboutPage() {
                   <span>
                     0{currentSlide + 1} / 0{activitySlides.length}
                   </span>
-                  <h4 className="text-2xl font-black text-gray-950 leading-snug">
+                  <h4 className="text-2xl font-bold text-gray-950 leading-snug">
                     {activitySlides[currentSlide].title}
                   </h4>
                   <p className="text-xs md:text-sm text-slate-600 leading-relaxed">
@@ -542,7 +541,7 @@ export default function AboutPage() {
             <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">
               Our Vision
             </span>
-            <h3 className="text-2xl font-extrabold text-white">Trusted Technical Partner</h3>
+            <h3 className="text-2xl font-bold text-white">Trusted Technical Partner</h3>
             <p className="text-sm text-white leading-relaxed">
               To become a trusted technical partner for organizations worldwide by delivering
               innovative, evidence-driven, and sustainable consulting solutions.
@@ -554,7 +553,7 @@ export default function AboutPage() {
             <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">
               Our Mission
             </span>
-            <h3 className="text-2xl font-extrabold text-white">Strategic Excellence</h3>
+            <h3 className="text-2xl font-bold text-white">Strategic Excellence</h3>
             <p className="text-sm text-white leading-relaxed">
               To strengthen organizational programming through quality proposal writing, research,
               technical excellence, capacity development, and strategic advisory services.
@@ -572,7 +571,7 @@ export default function AboutPage() {
             <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">
               Field Infrastructure
             </span>
-            <h2 className="text-3xl font-black tracking-tight text-slate-900">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900">
               Operational Capacity Across Bangladesh
             </h2>
             <p className="text-sm text-slate-500">
@@ -601,7 +600,7 @@ export default function AboutPage() {
                   </div>
 
                   <div className="space-y-2">
-                    <h4 className="text-lg font-extrabold text-slate-900 leading-snug group-hover:text-teal-700 transition">
+                    <h4 className="text-lg font-bold text-slate-900 leading-snug group-hover:text-teal-700 transition">
                       {item.title}
                     </h4>
                     <p className="text-xs text-slate-600 font-medium leading-relaxed">
@@ -629,8 +628,8 @@ export default function AboutPage() {
 
         {/* Section Header */}
         <div className="max-w-4xl mx-auto text-center space-y-3 mb-16 px-6 relative z-10">
-          <h2 className="text-3xl md:text-5xl font-black tracking-tight text-white leading-tight">
-            Our Experince
+          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white leading-tight">
+            Our Experience
           </h2>
           <p className="text-sm text-slate-400 max-w-2xl mx-auto">
             Trusted by bilateral agencies, experience of proposal writing and Donor report writing.
@@ -714,7 +713,7 @@ export default function AboutPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Text Content */}
           <div className="lg:col-span-6 space-y-6">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-teal-500 leading-tight">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-teal-500 leading-tight">
               Website Development & Digital Solutions
             </h2>
 
@@ -957,7 +956,7 @@ export default function AboutPage() {
           {/* RIGHT SIDE: DETAILED TEXTUAL CONTENT */}
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-3">
-              <h2 className="text-3xl sm:text-4xl font-black tracking-tight text-teal-500 leading-tight">
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-teal-500 leading-tight">
                 Ethics and Safeguarding
               </h2>
             </div>

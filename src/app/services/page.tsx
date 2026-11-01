@@ -13,7 +13,6 @@ import {
   
   Building2,
   FileSpreadsheet,
-  CheckCircle2,
   ArrowRight,
   Send
 } from "lucide-react";
@@ -77,11 +76,11 @@ const defaultImageMap: Record<string, string> = {
   "proposal-writing": "/assets/service-proposal.png",
   "research-evaluations": "/assets/service-research.png",
   "meal-systems": "/assets/service-meal.png",
-  "capacity-development": "/assets/service-capacity.png",
-  "data-services": "/assets/service-data.png",
-  "pseah-safeguarding": "/assets/service-pseah.png",
-  "strategy-policy": "/assets/service-strategy.png",
-  "donor-reporting-and-documentation": "/assets/service-reporting.png" 
+  "capacity-development": "/assets/service-capacity.jpg",
+  "data-services": "/assets/service-data.jpg",
+  "pseah-safeguarding": "/assets/service-pseah.jpg",
+  "strategy-policy": "/assets/service-strategy.jpg",
+  "donor-reporting-and-documentation": "/assets/service-reporting.jpg"
 };
 
 // Typed services data source
@@ -101,7 +100,8 @@ export default function ServicesPage() {
     { id: "capacity-development", label: "Capacity Building" },
     { id: "data-services", label: "Data Services" },
     { id: "pseah-safeguarding", label: "PSEAH & Safeguarding" },
-    { id: "strategy-policy", label: "Strategy & Policy" }
+    { id: "strategy-policy", label: "Strategy & Policy" },
+    { id: "donor-reporting-and-documentation", label: "Donor Reporting" }
   ];
 
   const filteredServices = selectedCategory === "all" 
@@ -132,7 +132,7 @@ export default function ServicesPage() {
           <span className="text-xs uppercase font-bold tracking-widest text-teal-400 drop-shadow-md">
             Technical Portfolio • Nationwide Scope
           </span>
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-white drop-shadow-lg leading-tight">
+          <h1 className="text-4xl md:text-5xl font-bold tracking-tight text-white drop-shadow-lg leading-tight">
             Consulting & Technical Advisory Services
           </h1>
           <p className="text-sm md:text-base text-teal-100/70 leading-relaxed max-w-2xl mx-auto drop-shadow">
@@ -160,7 +160,7 @@ export default function ServicesPage() {
                     onClick={() => setSelectedCategory(tab.id)}
                     className={`relative px-4 py-2.5 rounded-xl sm:rounded-full text-xs font-bold transition-all duration-300 shrink-0 flex items-center gap-2 cursor-pointer ${
                       isActive
-                        ? "bg-green-400 text-gray-900x shadow-md shadow-slate-950/20 border border-green-500/30"
+                        ? "bg-green-400 text-gray-900 shadow-md shadow-slate-950/20 border border-green-500/30"
                         : "bg-transparent text-slate-600 hover:text-slate-950 hover:bg-slate-100/80 border border-transparent"
                     }`}
                   >
@@ -189,7 +189,7 @@ export default function ServicesPage() {
           
           <div className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">Technical Capabilities</span>
-            <h2 className="text-3xl font-black tracking-tight text-slate-900">Tailored Advisory Solutions</h2>
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900">Tailored Advisory Solutions</h2>
             <p className="text-sm text-slate-500">Explore our structured expertise domains designed to generate measurable value for partners.</p>
           </div>
 
@@ -216,14 +216,14 @@ export default function ServicesPage() {
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white via-slate-50 to-teal-50/60 border border-teal-500/20 shadow-[0_8px_20px_rgba(20,184,166,0.15)] flex items-center justify-center transform group-hover:scale-110 group-hover:rotate-3 transition duration-300">
                       {iconMap[service.slug] || <FileText className="w-7 h-7 text-teal-600" />}
                     </div>
-                    <span className="text-[10px] font-extrabold uppercase tracking-widest text-teal-700 bg-teal-500/10 border border-teal-500/20 px-3 py-1 rounded-full">
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-teal-700 bg-teal-500/10 border border-teal-500/20 px-3 py-1 rounded-full">
                       {service.category || "Consultancy"}
                     </span>
                   </div>
 
                   {/* Title & Description */}
                   <div className="space-y-2">
-                    <h3 className="text-xl font-black text-slate-900 group-hover:text-teal-700 transition leading-snug">
+                    <h3 className="text-xl font-bold text-slate-900 group-hover:text-teal-700 transition leading-snug">
                       {service.title}
                     </h3>
                     <p className="text-xs text-slate-600 font-medium leading-relaxed">
@@ -261,17 +261,17 @@ export default function ServicesPage() {
             <span className="text-xs font-bold text-teal-400 uppercase tracking-widest bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20">
               Technical Partnership
             </span>
-            <h3 className="text-2xl md:text-3xl font-black tracking-tight text-white">
+            <h3 className="text-2xl md:text-3xl font-bold tracking-tight text-white">
               Ready to Submit a TOR or Proposal Request?
             </h3>
             <p className="text-xs md:text-sm text-slate-300 max-w-xl leading-relaxed">
-              Connect directly with our senior consultant network to request technical proposals, cost estimates, or capacity support across Bangladesh[cite: 1].
+              Connect directly with our senior consultant network to request technical proposals, cost estimates, or capacity support across Bangladesh.
             </p>
           </div>
 
           <Link
             href="/contact"
-            className="px-8 py-4 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 font-black text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition duration-300 shrink-0 text-center flex items-center gap-2"
+            className="px-8 py-4 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 font-bold text-xs uppercase tracking-widest shadow-xl hover:scale-105 transition duration-300 shrink-0 text-center flex items-center gap-2"
           >
             Submit Proposal Request <Send className="w-4 h-4" />
           </Link>
