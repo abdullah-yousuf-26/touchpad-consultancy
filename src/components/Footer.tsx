@@ -19,7 +19,7 @@ export default function Footer() {
         
         {/* Column 1 & 2: Core Identity */}
         <div className="space-y-4 sm:col-span-2 lg:col-span-2">
-          <h4 className="text-white font-black text-2xl tracking-tight">
+          <h4 className="text-white font-bold text-2xl tracking-tight">
             <span className="text-brand-green">TouchPad</span>{" "}
             <span className="text-brand-teal font-medium">Consultancy</span>
           </h4>
@@ -168,7 +168,7 @@ export default function Footer() {
 
       {/* GIANT BACKDROP BACKGROUND TYPOGRAPHY */}
       <div className="w-full text-center relative pointer-events-none select-none overflow-hidden h-20 sm:h-32 md:h-44 mt-6 sm:mt-10">
-        <h3 className="text-[14vw] sm:text-[12vw] font-black tracking-tighter text-white/[0.12] leading-none absolute left-1/2 -translate-x-1/2 bottom-0 whitespace-nowrap">
+        <h3 className="text-[14vw] sm:text-[12vw] font-bold tracking-tighter text-white/[0.12] leading-none absolute left-1/2 -translate-x-1/2 bottom-0 whitespace-nowrap">
           TouchPad
         </h3>
       </div>

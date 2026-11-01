@@ -54,7 +54,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10 w-full py-12 sm:py-16">
           <div className="text-left space-y-5 sm:space-y-6">
-            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-white leading-tight">
+            <h1 className="text-3xl xs:text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight">
               Your Trusted{" "}
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-teal-300 to-brand-green">
                 Development Partner
@@ -98,7 +98,7 @@ export default function Home() {
                   Corporate Intelligence
                 </span>
               </div>
-              <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+              <h2 className="text-2xl xs:text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
                 Transforming Operations Through Rigorous Execution.
               </h2>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[500px] bg-brand-teal/5 blur-[140px] rounded-full pointer-events-none" />
 
         <div className="max-w-4xl mx-auto text-center space-y-4 mb-14 sm:mb-20 relative z-10">
-          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+          <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-slate-900 leading-tight">
             Our Services
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm md:text-base leading-relaxed max-w-2xl mx-auto">
@@ -158,7 +158,7 @@ export default function Home() {
               <div className="absolute top-0 right-0 w-16 h-16 bg-gradient-to-br from-brand-teal to-teal-700 rounded-bl-full transition-all duration-700 ease-in-out group-hover:w-[160%] group-hover:h-[160%] group-hover:rounded-none z-0" />
 
               <div className="relative z-10 space-y-3 sm:space-y-4">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-black text-slate-900 group-hover:text-white transition-colors duration-300 leading-tight">
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-slate-900 group-hover:text-white transition-colors duration-300 leading-tight">
                   {service.title}
                 </h3>
                 
@@ -187,7 +187,7 @@ export default function Home() {
 
         <div className="max-w-6xl mx-auto text-center space-y-3 sm:space-y-4 mb-20 sm:mb-28 relative z-10">
           <span className="text-xs font-bold text-brand-green uppercase tracking-wider">The TouchPad Ecosystem</span>
-          <h2 className="text-2xl xs:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900">Our Operating Verticals</h2>
+          <h2 className="text-2xl xs:text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Our Operating Verticals</h2>
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-y-20 sm:gap-y-24 gap-x-8 lg:gap-x-12 relative z-10 px-2 sm:px-4 pt-6 sm:pt-10">
@@ -203,7 +203,7 @@ export default function Home() {
             </div>
 
             <div className="w-full text-center space-y-3 sm:space-y-4 pt-2 md:pt-24 transition-all duration-500">
-              <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-brand-green">TouchPad Solutions</h3>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-brand-green">TouchPad Solutions</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
                 Our multi-tasking IT and digital solutions wing. Specializing in rapid MERN full-stack application builds, customized responsive systems, and deployment lifecycle optimization.
               </p>
@@ -227,7 +227,7 @@ export default function Home() {
             </div>
 
             <div className="w-full text-center space-y-3 sm:space-y-4 pt-2 md:pt-24 transition-all duration-500">
-              <h3 className="text-xl sm:text-2xl font-black tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-brand-teal">TouchPad Learning Center</h3>
+              <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 transition-colors duration-300 group-hover:text-brand-teal">TouchPad Learning Center</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-sm mx-auto">
                 Our professional engineering learning division. Curating high-performance design pipelines, Canva system design frameworks, and advanced front-end development systems.
               </p>

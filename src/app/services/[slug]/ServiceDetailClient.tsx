@@ -87,7 +87,7 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
   if (!service) {
     return (
       <main className="w-full min-h-screen bg-slate-950 text-white flex flex-col items-center justify-center p-6 text-center">
-        <h1 className="text-4xl font-black text-teal-400 mb-2">404 - Service Domain Not Found</h1>
+        <h1 className="text-4xl font-bold text-teal-400 mb-2">404 - Service Domain Not Found</h1>
         <p className="text-sm text-slate-400 mb-6">The requested consultancy domain slug does not exist.</p>
         <Link href="/services" className="px-6 py-3 rounded-xl bg-teal-500 text-slate-950 font-bold text-xs uppercase tracking-wider">
           Return to All Services
@@ -132,7 +132,7 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
           </Link>
 
           <div className="space-y-3">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-white leading-tight">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-white leading-tight">
               {service.title}
             </h1>
             <p className="text-sm md:text-base text-slate-200 leading-relaxed max-w-3xl">
@@ -198,7 +198,7 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
                 <div className="p-3 rounded-2xl bg-teal-500/10 border border-teal-500/20">
                   {iconMap[service.slug] || <FileText className="w-8 h-8 text-teal-600" />}
                 </div>
-                <h2 className="text-xl sm:text-2xl font-black text-slate-900">Technical Scope & Overview</h2>
+                <h2 className="text-xl sm:text-2xl font-bold text-slate-900">Technical Scope & Overview</h2>
               </div>
               <p className="text-sm text-slate-600 leading-relaxed">
                 {service.overview || service.description || service.shortDescription}
@@ -284,7 +284,7 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
             <div className="p-6 rounded-3xl bg-slate-950 text-white border border-teal-500/20 shadow-xl space-y-4 relative overflow-hidden">
               <div className="space-y-2">
                 <span className="text-xs font-bold text-teal-400 uppercase tracking-widest">Submit TOR Request</span>
-                <h4 className="text-lg font-black text-white">Initiate an Assignment</h4>
+                <h4 className="text-lg font-bold text-white">Initiate an Assignment</h4>
                 <p className="text-xs text-slate-300 leading-relaxed">
                   Request a customized technical proposal, budget breakdown, or consultant team lineup for this domain.
                 </p>
@@ -292,7 +292,7 @@ export default function ServiceDetailClient({ service }: { service: ServiceItem 
 
               <Link 
                 href="/contact" 
-                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition"
+                className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-teal-500 to-emerald-500 text-slate-950 font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg hover:scale-[1.02] active:scale-[0.98] transition"
               >
                 Request Proposal <Send className="w-4 h-4" />
               </Link>
