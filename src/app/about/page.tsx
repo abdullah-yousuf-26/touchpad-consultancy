@@ -589,8 +589,9 @@ export default function AboutPage() {
                 {/* BACKGROUND IMAGE LAYER */}
                 <div className="absolute inset-0 z-0">
                   <OptimizedImage src={item.image} alt={item.title} />
-                  <div className="absolute inset-0 bg-white/5 backdrop-blur-[2px] group-hover:bg-white/80 transition-all duration-300" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/15 to-teal-50/50" />
+                  <div className="absolute inset-0 bg-white/75 group-hover:bg-white/85 transition-all duration-300" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/65 to-teal-50/30" />
+                  
                 </div>
 
                 {/* CONTENT LAYER */}
@@ -663,6 +664,7 @@ export default function AboutPage() {
                   { name: "Samsung C&T", logo: "/assets/partners/samsung.png" },
                   { name: "Embassy of Japan", logo: "/assets/partners/embassy-japan.png" },
                   { name: "UNESCO", logo: "/assets/partners/unesco.png" },
+
                   // Duplicated for loop
                   { name: "Government of Canada", logo: "/assets/partners/canada.png" },
                   { name: "LG (Life's Good)", logo: "/assets/partners/lg.png" },
