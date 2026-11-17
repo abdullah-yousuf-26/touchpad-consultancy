@@ -1,5 +1,5 @@
 "use client";
-
+import AboutScrollEffects from "@/components/AboutScrollEffects";
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import dynamic from "next/dynamic";
@@ -142,7 +142,7 @@ function JourneyTimelineSection() {
   }, []);
 
   return (
-    <section
+    <section data-scroll-reveal
       ref={sectionRef}
       className="relative w-full py-28 px-6 z-10 bg-green-400 text-white overflow-hidden"
     >
@@ -321,7 +321,12 @@ export default function AboutPage() {
   }, [isAutoplay, activitySlides.length]);
 
   return (
-    <main className="w-full min-h-screen font-sans bg-slate-50 text-slate-900 transition-colors duration-300 relative overflow-hidden">
+          <main
+        id="about-page"
+        data-scroll-reveal-skip
+        className="w-full min-h-screen font-sans bg-slate-50 text-slate-900 transition-colors duration-300 relative overflow-hidden"
+      >
+        <AboutScrollEffects />
       {/* Background Mesh */}
       <div className="absolute inset-0 pointer-events-none bg-gradient-to-br from-teal-500/5 via-transparent to-emerald-500/5" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[600px] bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.08),transparent_60%)] pointer-events-none" />
@@ -357,7 +362,7 @@ export default function AboutPage() {
       {/* =========================================================================
           HERO HEADER WITH THREE.JS COLOR BENDS MOTION LAYER
           ========================================================================= */}
-      <section className="relative pt-44 pb-28 px-6 overflow-hidden border-b border-teal-500/20 text-white z-10 flex items-center justify-center bg-slate-950">
+      <section data-scroll-reveal className="relative pt-44 pb-28 px-6 overflow-hidden border-b border-teal-500/20 text-white z-10 flex items-center justify-center bg-slate-950">
         {/* THREE.JS MOTION LAYER */}
         <div className="absolute inset-0 z-0">
           <ColorBends
@@ -401,10 +406,10 @@ export default function AboutPage() {
       {/* =========================================================================
           FEATURED SECTION: ABOUT US & INTERACTIVE ACTIVITIES CAROUSEL
           ========================================================================= */}
-      <section className="relative w-full py-24 px-6 z-10 bg-white-300 text-white overflow-hidden border-b border-teal-500/20">
+      <section data-scroll-reveal className="relative w-full py-24 px-6 z-10 bg-white-300 text-white overflow-hidden border-b border-teal-500/20">
         <div className="max-w-6xl mx-auto space-y-16 relative z-10">
           {/* Section Header */}
-          <div className="w-full space-y-4">
+          <div data-about-reveal="up" className="w-full space-y-4">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-teal-500 leading-tight">
               About TouchPad Consultancy
             </h2>
@@ -534,9 +539,10 @@ export default function AboutPage() {
       {/* =========================================================================
           VISION & MISSION
           ========================================================================= */}
-      <section className="relative w-full py-20 px-6 z-10">
+      <section data-scroll-reveal className="relative w-full py-20 px-6 z-10">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="p-8 rounded-3xl bg-green-500 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-green-900 transition duration-300">
+          <div data-about-reveal="left"className="p-8 rounded-3xl bg-green-500 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-green-900 transition duration-300"
+>
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-teal-500/10 rounded-full blur-2xl group-hover:bg-teal-500/20 transition duration-500" />
             <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">
               Our Vision
@@ -548,7 +554,8 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="p-8 rounded-3xl bg-green-500 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-teal-900 transition duration-300">
+          <div data-about-reveal="right"className="p-8 rounded-3xl bg-green-500 text-white border border-teal-500/20 shadow-2xl space-y-3 relative overflow-hidden group hover:border-teal-900 transition duration-300"
+>
             <div className="absolute -top-12 -right-12 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl group-hover:bg-emerald-500/20 transition duration-500" />
             <span className="text-xs font-bold text-gray-900 uppercase tracking-wider">
               Our Mission
@@ -565,9 +572,9 @@ export default function AboutPage() {
       {/* =========================================================================
           OPERATIONAL CAPACITY SECTION (3D GLASSMORPHISM & LUCIDE ICONS)
           ========================================================================= */}
-      <section className="relative w-full py-20 px-6 z-10 bg-slate-100/50 border-t border-b border-slate-200/60">
+      <section data-scroll-reveal className="relative w-full py-20 px-6 z-10 bg-slate-100/50 border-t border-b border-slate-200/60">
         <div className="max-w-6xl mx-auto space-y-12">
-          <div className="text-center max-w-2xl mx-auto space-y-2">
+          <div data-about-reveal="up" className="text-center max-w-2xl mx-auto space-y-2">
             <span className="text-xs font-bold text-teal-600 uppercase tracking-wider">
               Field Infrastructure
             </span>
@@ -580,7 +587,8 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div data-about-cards className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+>
             {operationalCapacities.map((item, idx) => (
               <div
                 key={idx}
@@ -623,7 +631,7 @@ export default function AboutPage() {
       {/* =========================================================================
           PARTNERSHIP AND AFFILIATION (ULTRA-SLOW 1:1 SQUARE CARDS & LOGOS)
           ========================================================================= */}
-      <section className="relative w-full py-10 bg-slate-950 text-white border-t border-slate-800 overflow-hidden">
+      <section data-scroll-reveal className="relative w-full py-10 bg-slate-950 text-white border-t border-slate-800 overflow-hidden">
         {/* Soft Ambient Glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] bg-teal-500/5 blur-[160px] rounded-full pointer-events-none" />
 
@@ -711,7 +719,7 @@ export default function AboutPage() {
       {/* =========================================================================
           2. WEBSITE DEVELOPMENT & DIGITAL SOLUTIONS (ORBITAL TECH RADAR)
           ========================================================================= */}
-      <section className="relative w-full py-24 px-6 z-10 bg-white border-t border-slate-200/80 overflow-hidden">
+      <section data-scroll-reveal className="relative w-full py-24 px-6 z-10 bg-white border-t border-slate-200/80 overflow-hidden">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Text Content */}
           <div className="lg:col-span-6 space-y-6">
@@ -914,10 +922,10 @@ export default function AboutPage() {
       {/* =========================================================================
           3. ETHICS AND SAFEGUARDING (INDIVIDUAL FLOATING POINTS OVER IMAGE)
           ========================================================================= */}
-      <section className="relative w-full py-24 px-6 z-10 bg-slate-50 border-t border-slate-200/80">
+      <section data-scroll-reveal className="relative w-full py-24 px-6 z-10 bg-slate-50 border-t border-slate-200/80">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* LEFT SIDE: FEATURED IMAGE WITH INDIVIDUAL FLOATING PILL POINTS */}
-          <div className="lg:col-span-5 relative w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
+          <div data-about-reveal="zoom" className="lg:col-span-5 relative w-full rounded-3xl overflow-hidden shadow-2xl border border-slate-800">
             {/* Image Container */}
             <div className="relative w-full h-[540px] sm:h-[580px]">
               <OptimizedImage
@@ -956,7 +964,7 @@ export default function AboutPage() {
           </div>
 
           {/* RIGHT SIDE: DETAILED TEXTUAL CONTENT */}
-          <div className="lg:col-span-7 space-y-6">
+          <div  data-about-reveal="right" className="lg:col-span-7 space-y-6">
             <div className="space-y-3">
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-teal-500 leading-tight">
                 Ethics and Safeguarding

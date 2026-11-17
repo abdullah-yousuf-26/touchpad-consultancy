@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import FloatingShare from "@/components/FloatingShare";
 import FixedWhatsApp from "@/components/FixedWhatsApp";
+import ScrollReveal from "@/components/ScrollReveal";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -120,7 +121,11 @@ export default function RootLayout({
       <body className="antialiased min-h-screen flex flex-col bg-white text-slate-950 w-full max-w-full">
         <Navbar />
 
-        <main className="flex-grow w-full max-w-full relative">{children}</main>
+        <ScrollReveal />
+
+        <main className="flex-grow w-full max-w-full relative">
+          {children}
+        </main>
 
         <Footer />
         <FloatingShare />
